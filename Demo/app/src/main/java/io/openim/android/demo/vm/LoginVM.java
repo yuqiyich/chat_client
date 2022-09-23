@@ -1,6 +1,4 @@
 package io.openim.android.demo.vm;
-
-import static io.openim.android.ouicore.utils.Common.UIHandler;
 import static io.openim.android.ouicore.utils.Common.md5;
 
 import androidx.annotation.NonNull;
@@ -8,13 +6,12 @@ import androidx.lifecycle.MutableLiveData;
 
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
+import io.openim.android.ouicore.base.BaseApp;
 import io.openim.android.ouicore.entity.LoginCertificate;
 import io.openim.android.demo.repository.OpenIMService;
 import io.openim.android.ouicore.base.BaseViewModel;
@@ -43,18 +40,28 @@ public class LoginVM extends BaseViewModel<LoginVM.ViewAction> {
     public  String verificationCode;
 
     public void login() {
-        Parameter parameter = getParameter(null);
+//        BaseApp.inst().loginCertificate=new LoginCertificate();
+//        BaseApp.inst().loginCertificate.userID="lt_40";
+//        BaseApp.inst().loginCertificate.token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVSUQiOiJsdF80MCIsIlBsYXRmb3JtIjoiQW5kcm9pZCIsImV4cCI6MTY2Mjk2NzI1NSwibmJmIjoxNjYyMzYyNDU1LCJpYXQiOjE2NjIzNjI0NTV9.qweEUM8WYjBhVDLWEbj2ixc66DZbrcxlNOQQx_BEB4o";
+//        OpenIMClient.getInstance().login(new OnBase<String>() {
+//            @Override
+//            public void onError(int code, String error) {
+//                IView.err(error);
+//            }
+//
+//            @Override
+//            public void onSuccess(String data) {
+//                BaseApp.inst().loginCertificate.cache(getContext());
+//                //缓存登录信息
+//                IView.jump();
+//            }
+//        }, BaseApp.inst().loginCertificate.userID, BaseApp.inst().loginCertificate.token);
 
-        WaitDialog waitDialog = showWait();
+
+        Parameter parameter = getParameter(null);
         N.API(OpenIMService.class).login(parameter.buildJsonBody())
             .compose(N.IOMain())
             .subscribe(new NetObserver<ResponseBody>(getContext()) {
-
-                @Override
-                public void onComplete() {
-                    super.onComplete();
-                    waitDialog.dismiss();
-                }
 
                 @Override
                 public void onSuccess(ResponseBody o) {
@@ -80,8 +87,6 @@ public class LoginVM extends BaseViewModel<LoginVM.ViewAction> {
                             }
                         }, loginCertificate.data.userID, loginCertificate.data.token);
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -89,7 +94,7 @@ public class LoginVM extends BaseViewModel<LoginVM.ViewAction> {
                 }
 
                 @Override
-                public void onError(Throwable e) {
+                protected void onFailure(Throwable e) {
                     IView.err(e.getMessage());
                 }
             });
@@ -152,7 +157,7 @@ public class LoginVM extends BaseViewModel<LoginVM.ViewAction> {
     }
 
     @NonNull
-    private WaitDialog showWait() {
+    public WaitDialog showWait() {
         WaitDialog waitDialog = new WaitDialog(getContext());
         waitDialog.setNotDismiss();
         waitDialog.show();
@@ -237,7 +242,7 @@ public class LoginVM extends BaseViewModel<LoginVM.ViewAction> {
 
                 @Override
                 protected void onFailure(Throwable e) {
-                   IView.err(e.getMessage());
+                   IView.toast(e.getMessage());
                 }
             });
     }
@@ -263,6 +268,7 @@ public class LoginVM extends BaseViewModel<LoginVM.ViewAction> {
         void succ(Object o);
 
         void initDate();
+
     }
 
 }

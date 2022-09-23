@@ -4,6 +4,15 @@
 
     <application>
         <activity
+            android:name=".ui.MyGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ForwardToActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AllFriendActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.FriendRequestDetailActivity"
             android:exported="false" />
         <activity

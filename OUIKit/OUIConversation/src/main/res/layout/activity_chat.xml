@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="chatVM"
+            name="ChatVM"
             type="io.openim.android.ouiconversation.vm.ChatVM" />
 
         <import type="android.view.View" />
@@ -30,15 +30,32 @@
                 android:layout_height="@dimen/comm_title_high"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="15dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:src="@mipmap/ic_back2" />
+                <RelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+
+                        android:src="@mipmap/ic_back2" />
+
+                    <TextView
+                        android:id="@+id/cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="取消"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -63,7 +80,7 @@
                         android:text="@string/typing"
                         android:textColor="#ff999999"
                         android:textSize="10sp"
-                        android:visibility="@{chatVM.typing? View.VISIBLE:View.GONE}" />
+                        android:visibility="@{ChatVM.typing? View.VISIBLE:View.GONE}" />
                 </LinearLayout>
 
 
@@ -87,17 +104,64 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/layout_input_cote"
-            android:layout_below="@id/card"
-            android:layout_weight="1"
-            android:overScrollMode="never"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp" />
+            android:layout_below="@id/card">
+
+            <ImageView
+                android:id="@+id/chatBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:paddingLeft="22dp"
+                android:paddingRight="22dp" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/sty_radius_4_f0f6ff"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="7dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="7dp"
+            android:visibility="@{null!=ChatVM.notificationMsg? View.VISIBLE:View.GONE}">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_notice" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{ChatVM.notificationMsg.group.notification}"
+                android:textColor="#ff617183"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_right" />
+        </LinearLayout>
 
 
         <include
@@ -106,5 +170,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" />
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/choiceMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:visibility="gone"
+            app:hl_bottomShow="false"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <CheckBox
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/ic_delete_grey"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="@string/delete"
+                    android:textColor="#ff898989"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/mergeForward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/ic_forward_grey"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="@string/merge_forward"
+                    android:textColor="#ff898989"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </com.lihang.ShadowLayout>
+
     </RelativeLayout>
 </layout>

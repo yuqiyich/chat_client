@@ -1,26 +1,34 @@
 package io.openim.android.demo.ui.search;
 
-import static io.openim.android.ouicore.utils.Constant.ID;
-
-
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.openim.android.demo.databinding.ActivityPersonDetailBinding;
+import io.openim.android.demo.ui.user.PersonDataActivity;
 import io.openim.android.demo.vm.SearchVM;
-import io.openim.android.ouiconversation.utils.Constant;
 import io.openim.android.ouicore.base.BaseActivity;
+import io.openim.android.ouicore.databinding.LayoutCommonDialogBinding;
+import io.openim.android.ouicore.im.IMUtil;
+import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.utils.Routes;
-import io.openim.android.ouicore.utils.SinkHelper;
+import io.openim.android.ouicore.widget.CommonDialog;
 import io.openim.android.sdk.models.FriendshipInfo;
+import io.openim.android.sdk.models.SignalingInfo;
 import io.openim.android.sdk.models.UserInfo;
 
+@Route(path = Routes.Main.PERSON_DETAIL)
 public class PersonDetailActivity extends BaseActivity<SearchVM, ActivityPersonDetailBinding> {
+    private boolean formChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,26 +36,68 @@ public class PersonDetailActivity extends BaseActivity<SearchVM, ActivityPersonD
         bindViewDataBinding(ActivityPersonDetailBinding.inflate(getLayoutInflater()));
         super.onCreate(savedInstanceState);
 
-        setLightStatus();
-        SinkHelper.get(this).setTranslucentStatus(view.getRoot());
+        sink();
 
         listener();
-        vm.searchContent = getIntent().getStringExtra(ID);
+        vm.searchContent = getIntent().getStringExtra(Constant.K_ID);
         vm.searchPerson();
+
+        formChat = getIntent().getBooleanExtra(Constant.K_RESULT, false);
+
 
         click();
     }
 
+
     private void click() {
-        view.sendMsg.setOnClickListener(v -> ARouter.getInstance().build(Routes.Conversation.CHAT)
-                .withString(ID, vm.searchContent)
-                .withString(io.openim.android.ouicore.utils.Constant.K_NAME, vm.userInfo.getValue().get(0).getNickname())
-                .navigation());
+        view.userInfo.setOnClickListener(v -> {
+            startActivity(new Intent(this, PersonDataActivity.class));
+        });
+        view.sendMsg.setOnClickListener(v -> {
+                if (formChat) {
+                    finish();
+                } else {
+                    ARouter.getInstance().build(Routes.Conversation.CHAT)
+                        .withString(Constant.K_ID, vm.searchContent)
+                        .withString(Constant.K_NAME, vm.userInfo.getValue().get(0).getNickname())
+                        .navigation();
+                }
+            }
+        );
 
 
         view.addFriend.setOnClickListener(v -> {
-            startActivity(new Intent(this, SendVerifyActivity.class).putExtra(ID, vm.searchContent));
+            startActivity(new Intent(this, SendVerifyActivity.class).putExtra(Constant.K_ID, vm.searchContent));
         });
+        view.part.setOnClickListener(v -> {
+            CommonDialog commonDialog = new CommonDialog(this);
+            commonDialog.show();
+            LayoutCommonDialogBinding mainView = commonDialog.getMainView();
+            mainView.tips.setText(io.openim.android.ouicore.R.string.delete_friend_tips);
+            mainView.cancel.setOnClickListener(v1 -> commonDialog.dismiss());
+            mainView.confirm.setOnClickListener(v1 -> {
+                commonDialog.dismiss();
+                vm.deleteFriend(vm.searchContent);
+            });
+        });
+
+        view.call.setOnClickListener(v -> {
+            IMUtil.showBottomPopMenu(this, (v1, keyCode, event) -> {
+                List<String> ids = new ArrayList<>();
+                ids.add(vm.searchContent);
+                SignalingInfo signalingInfo = IMUtil.buildSignalingInfo(keyCode != 1, true,
+                    ids, null);
+                callingService.call(signalingInfo);
+                return false;
+            });
+        });
+    }
+
+    @Override
+    public void onSuccess(Object body) {
+        super.onSuccess(body);
+        setResult(RESULT_OK);
+        finish();
     }
 
     private void listener() {
@@ -55,7 +105,11 @@ public class PersonDetailActivity extends BaseActivity<SearchVM, ActivityPersonD
             if (null != v && !v.isEmpty()) {
                 vm.checkFriend(v);
                 UserInfo userInfo = v.get(0);
-                view.nickName.setText(userInfo.getNickname());
+                String nickName = userInfo.getNickname();
+                if (!TextUtils.isEmpty(userInfo.getRemark())) {
+                    nickName += "(" + userInfo.getRemark() + ")";
+                }
+                view.nickName.setText(nickName);
                 view.userId.setText(userInfo.getUserID());
                 view.avatar.load(userInfo.getFaceURL());
             }
@@ -63,7 +117,8 @@ public class PersonDetailActivity extends BaseActivity<SearchVM, ActivityPersonD
         vm.friendshipInfo.observe(this, v -> {
             if (null != v && !v.isEmpty()) {
                 FriendshipInfo friendshipInfo = v.get(0);
-                if (friendshipInfo.getResult() == 1) {
+                if (friendshipInfo.getResult() == 1 || friendshipInfo.getResult() == 0) {
+                    view.userInfo.setVisibility(formChat ? View.VISIBLE : View.GONE);
                     view.addFriend.setVisibility(View.GONE);
                     view.part.setVisibility(View.VISIBLE);
                 } else {

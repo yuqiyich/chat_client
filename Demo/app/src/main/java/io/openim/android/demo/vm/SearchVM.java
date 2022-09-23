@@ -7,9 +7,12 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.openim.android.demo.R;
 import io.openim.android.ouicore.base.BaseViewModel;
+import io.openim.android.ouicore.utils.L;
 import io.openim.android.sdk.OpenIMClient;
 import io.openim.android.sdk.listener.OnBase;
+import io.openim.android.sdk.models.FriendInfo;
 import io.openim.android.sdk.models.FriendshipInfo;
 import io.openim.android.sdk.models.GroupInfo;
 import io.openim.android.sdk.models.UserInfo;
@@ -28,22 +31,29 @@ public class SearchVM extends BaseViewModel {
     //y 搜索人 n 搜索群
     public boolean isPerson = false;
 
-
     public void searchPerson() {
-        List<String> uidList = new ArrayList<>(); // 用户ID集合
-        uidList.add(searchContent);
+        searchPerson(null);
+    }
+
+    public void searchPerson(List<String> ids) {
+        if (null == ids) {
+            ids = new ArrayList<>(); // 用户ID集合
+            ids.add(searchContent);
+        }
+        //兼容旧版
         OpenIMClient.getInstance().userInfoManager.getUsersInfo(new OnBase<List<UserInfo>>() {
             @Override
             public void onError(int code, String error) {
+                L.e(error + "-" + code);
                 userInfo.setValue(null);
             }
 
             @Override
             public void onSuccess(List<UserInfo> data) {
+                if (data.isEmpty()) return;
                 userInfo.setValue(data);
             }
-        }, uidList);
-
+        }, ids);
     }
 
     public void checkFriend(List<UserInfo> data) {
@@ -78,7 +88,7 @@ public class SearchVM extends BaseViewModel {
         if (isPerson)
             OpenIMClient.getInstance().friendshipManager.addFriend(callBack, searchContent, hail.getValue());
         else
-            OpenIMClient.getInstance().groupManager.joinGroup(callBack, searchContent, hail.getValue());
+            OpenIMClient.getInstance().groupManager.joinGroup(callBack, searchContent, hail.getValue(), 2);
     }
 
     public void search() {
@@ -102,5 +112,26 @@ public class SearchVM extends BaseViewModel {
                 groupsInfo.setValue(data);
             }
         }, groupIds);
+
+    }
+
+    /**
+     * 移除好友
+     *
+     * @param uid
+     */
+    public void deleteFriend(String uid) {
+        OpenIMClient.getInstance().friendshipManager.deleteFriend(new OnBase<String>() {
+            @Override
+            public void onError(int code, String error) {
+                IView.toast(error);
+            }
+
+            @Override
+            public void onSuccess(String data) {
+                IView.toast(getContext().getString(io.openim.android.ouicore.R.string.delete_friend));
+                IView.onSuccess(data);
+            }
+        }, uid);
     }
 }

@@ -1,4 +1,3 @@
-
 pluginManagement {
     repositories {
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
@@ -9,10 +8,7 @@ pluginManagement {
             allowInsecureProtocol = true
             url 'http://121.37.25.71:8081/repository/maven2/'
         }
-        maven {
-            url "https://jitpack.io"
-        }
-//        gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
 //        google()
 //        mavenCentral()
     }
@@ -28,9 +24,7 @@ dependencyResolutionManagement {
             allowInsecureProtocol = true
             url 'http://121.37.25.71:8081/repository/maven2/'
         }
-        maven {
-            url "https://jitpack.io"
-        }
+        maven { url 'https://jitpack.io' }
 //        google()
 //        mavenCentral()
     }
@@ -38,16 +32,17 @@ dependencyResolutionManagement {
 rootProject.name = "Demo"
 include ':app'
 
-include ':OpenIM-SDK'
-project(':OpenIM-SDK').projectDir = new File(settingsDir, '../Open-IM-SDK-Android/OpenIM-SDK')
-
 include ':OUICore'
 project(':OUICore').projectDir = new File(settingsDir, '../OUIKit/OUICore')
-
 include ':OUIConversation'
 project(':OUIConversation').projectDir = new File(settingsDir, '../OUIKit/OUIConversation')
-
 include ':OUIGroup'
 project(':OUIGroup').projectDir = new File(settingsDir, '../OUIKit/OUIGroup')
 include ':OUIContact'
 project(':OUIContact').projectDir = new File(settingsDir, '../OUIKit/OUIContact')
+include ':OUICalling'
+project(':OUICalling').projectDir = new File(settingsDir, '../OUIKit/OUICalling')
+include ':aar-spotify'
+project(':aar-spotify').projectDir = new File(settingsDir, '../OUIKit/aar-spotify')
+
+

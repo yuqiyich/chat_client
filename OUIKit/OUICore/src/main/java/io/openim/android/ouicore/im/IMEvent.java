@@ -1,17 +1,23 @@
 package io.openim.android.ouicore.im;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
+import io.openim.android.ouicore.base.BaseApp;
+import io.openim.android.ouicore.services.CallingService;
 import io.openim.android.ouicore.utils.L;
+import io.openim.android.ouicore.utils.Routes;
 import io.openim.android.sdk.OpenIMClient;
 import io.openim.android.sdk.listener.OnAdvanceMsgListener;
 import io.openim.android.sdk.listener.OnConnListener;
 import io.openim.android.sdk.listener.OnConversationListener;
 import io.openim.android.sdk.listener.OnFriendshipListener;
 import io.openim.android.sdk.listener.OnGroupListener;
+import io.openim.android.sdk.listener.OnSignalingListener;
 import io.openim.android.sdk.listener.OnUserListener;
 import io.openim.android.sdk.models.BlacklistInfo;
 import io.openim.android.sdk.models.ConversationInfo;
@@ -22,6 +28,8 @@ import io.openim.android.sdk.models.GroupInfo;
 import io.openim.android.sdk.models.GroupMembersInfo;
 import io.openim.android.sdk.models.Message;
 import io.openim.android.sdk.models.ReadReceiptInfo;
+import io.openim.android.sdk.models.RevokedInfo;
+import io.openim.android.sdk.models.SignalingInfo;
 import io.openim.android.sdk.models.UserInfo;
 
 ///im事件 统一处理
@@ -45,6 +53,51 @@ public class IMEvent {
         friendshipListener();
         conversationListener();
         groupListeners();
+//        signalingListener();
+    }
+
+    private void signalingListener() {
+        OpenIMClient.getInstance().signalingManager.setSignalingListener(new OnSignalingListener() {
+            @Override
+            public void onInvitationCancelled(SignalingInfo s) {
+                // 被邀请者收到：邀请者取消音视频通话
+            }
+
+            @Override
+            public void onInvitationTimeout(SignalingInfo s) {
+                // 邀请者收到：被邀请者超时未接通
+            }
+
+            @Override
+            public void onInviteeAccepted(SignalingInfo s) {
+                // 邀请者收到：被邀请者同意音视频通话
+            }
+
+            @Override
+            public void onInviteeAcceptedByOtherDevice(SignalingInfo s) {
+
+            }
+
+            @Override
+            public void onInviteeRejected(SignalingInfo s) {
+                // 邀请者收到：被邀请者拒绝音视频通话
+            }
+
+            @Override
+            public void onInviteeRejectedByOtherDevice(SignalingInfo s) {
+
+            }
+
+            @Override
+            public void onReceiveNewInvitation(SignalingInfo s) {
+                // 被邀请者收到：音视频通话邀请
+            }
+
+            @Override
+            public void onHangup(SignalingInfo s) {
+
+            }
+        });
     }
 
     public static synchronized IMEvent getInstance() {
@@ -143,6 +196,11 @@ public class IMEvent {
         public void onKickedOffline() {
             // 当前用户被踢下线，此时可以 UI 提示用户“您已经在其他端登录了当前账号，是否重新登录？”
             L.d("当前用户被踢下线");
+
+            CallingService callingService = (CallingService) ARouter.getInstance()
+                .build(Routes.Service.CALLING).navigation();
+            if (null != callingService)
+                callingService.stopAudioVideoService(BaseApp.inst());
         }
 
         @Override
@@ -191,11 +249,17 @@ public class IMEvent {
             @Override
             public void onGroupInfoChanged(GroupInfo info) {
                 // 组资料变更
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onGroupInfoChanged(info);
+                }
             }
 
             @Override
             public void onGroupMemberAdded(GroupMembersInfo info) {
                 // 组成员进入
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onGroupMemberAdded(info);
+                }
             }
 
             @Override
@@ -347,6 +411,11 @@ public class IMEvent {
                 for (OnAdvanceMsgListener onAdvanceMsgListener : advanceMsgListeners) {
                     onAdvanceMsgListener.onRecvMessageRevoked(msgId);
                 }
+            }
+
+            @Override
+            public void onRecvMessageRevokedV2(RevokedInfo info) {
+
             }
 
             @Override

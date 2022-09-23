@@ -23,6 +23,7 @@ import io.openim.android.sdk.listener.OnConversationListener;
 import io.openim.android.sdk.models.ConversationInfo;
 import io.openim.android.sdk.models.Message;
 import io.openim.android.sdk.models.ReadReceiptInfo;
+import io.openim.android.sdk.models.RevokedInfo;
 
 public class ContactListVM extends BaseViewModel<ContactListVM.ViewAction> implements OnConversationListener, OnAdvanceMsgListener {
     public MutableLiveData<List<MsgConversation>> conversations = new MutableLiveData<>(new ArrayList<>());
@@ -31,12 +32,26 @@ public class ContactListVM extends BaseViewModel<ContactListVM.ViewAction> imple
     protected void viewCreate() {
         IMEvent.getInstance().addConversationListener(this);
         IMEvent.getInstance().addAdvanceMsgListener(this);
-        undataConversation();
+        updataConversation();
 
-        UIHandler.postDelayed(this::undataConversation,5*1000);
+        UIHandler.postDelayed(this::updataConversation, 5 * 1000);
     }
 
-    private void undataConversation() {
+    public void deleteConversationFromLocalAndSvr(String conversationId) {
+        OpenIMClient.getInstance().conversationManager.deleteConversationFromLocalAndSvr(new OnBase<String>() {
+            @Override
+            public void onError(int code, String error) {
+
+            }
+
+            @Override
+            public void onSuccess(String data) {
+                updataConversation();
+            }
+        }, conversationId);
+    }
+
+    private void updataConversation() {
         OpenIMClient.getInstance().conversationManager.getAllConversationList(new OnBase<List<ConversationInfo>>() {
             @Override
             public void onError(int code, String error) {
@@ -45,10 +60,13 @@ public class ContactListVM extends BaseViewModel<ContactListVM.ViewAction> imple
 
             @Override
             public void onSuccess(List<ConversationInfo> data) {
-                L.e("------AllConversationList---size--"+data.size());
+                L.e("AllConversationList---size--" + data.size());
                 conversations.getValue().clear();
                 for (ConversationInfo datum : data) {
-                    conversations.getValue().add(new MsgConversation(GsonHel.fromJson(datum.getLatestMsg(), Message.class), datum));
+                    Message msg = GsonHel.fromJson(datum.getLatestMsg(), Message.class);
+                    if (null == msg)
+                        continue;
+                    conversations.getValue().add(new MsgConversation(msg, datum));
                 }
                 conversations.setValue(conversations.getValue());
             }
@@ -57,7 +75,7 @@ public class ContactListVM extends BaseViewModel<ContactListVM.ViewAction> imple
 
     @Override
     public void onConversationChanged(List<ConversationInfo> list) {
-        undataConversation();
+        updataConversation();
     }
 
 
@@ -98,7 +116,7 @@ public class ContactListVM extends BaseViewModel<ContactListVM.ViewAction> imple
 
     @Override
     public void onTotalUnreadMessageCountChanged(int i) {
-            L.e("");
+        L.e("");
     }
 
     @Override
@@ -121,7 +139,10 @@ public class ContactListVM extends BaseViewModel<ContactListVM.ViewAction> imple
 
     }
 
+    @Override
+    public void onRecvMessageRevokedV2(RevokedInfo info) {
 
+    }
 
     public interface ViewAction extends IView {
         void onErr(String msg);

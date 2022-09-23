@@ -3,9 +3,6 @@ package io.openim.android.ouiconversation.ui;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
-import static io.openim.android.ouicore.utils.Constant.GROUP_ID;
-import static io.openim.android.ouicore.utils.Constant.ID;
-import static io.openim.android.ouicore.utils.Constant.K_NAME;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,21 +31,30 @@ import java.util.List;
 
 import io.openim.android.ouiconversation.R;
 
+import io.openim.android.ouiconversation.adapter.MessageViewHolder;
 import io.openim.android.ouiconversation.databinding.FragmentContactListBinding;
 import io.openim.android.ouiconversation.databinding.LayoutContactItemBinding;
 import io.openim.android.ouiconversation.vm.ContactListVM;
+import io.openim.android.ouicore.base.BaseApp;
 import io.openim.android.ouicore.base.BaseFragment;
 import io.openim.android.ouicore.entity.MsgConversation;
+import io.openim.android.ouicore.im.IMUtil;
+import io.openim.android.ouicore.net.bage.Base;
 import io.openim.android.ouicore.utils.Common;
 import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.utils.Routes;
 import io.openim.android.ouicore.utils.TimeUtil;
+import io.openim.android.sdk.OpenIMClient;
+import io.openim.android.sdk.models.ConversationInfo;
 
 @Route(path = Routes.Conversation.CONTACT_LIST)
 public class ContactListFragment extends BaseFragment<ContactListVM> implements ContactListVM.ViewAction {
 
+    private long mLastClickTime;
+    private long timeInterval = 700;
 
     private FragmentContactListBinding view;
+    private CustomAdapter adapter;
 
     public static ContactListFragment newInstance() {
         return new ContactListFragment();
@@ -56,6 +63,7 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         bindVM(ContactListVM.class);
+        BaseApp.inst().putVM(vm);
         super.onCreate(savedInstanceState);
     }
 
@@ -97,22 +105,41 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
         view.recyclerView.setSwipeMenuCreator(mSwipeMenuCreator);
         view.recyclerView.setOnItemMenuClickListener((menuBridge, adapterPosition) -> {
             int menuPosition = menuBridge.getPosition();
+            if (menuPosition == 0) {
 
+            } else {
+                MsgConversation conversationInfo = vm.conversations.getValue().get(adapterPosition);
+                vm.conversations.getValue().remove(conversationInfo);
+                adapter.notifyItemRemoved(adapterPosition);
+                vm.deleteConversationFromLocalAndSvr(conversationInfo.conversationInfo.getConversationID());
+            }
         });
         view.recyclerView.setOnItemClickListener((view, position) -> {
+            long nowTime = System.currentTimeMillis();
+            if (nowTime - mLastClickTime < timeInterval)
+                return;
+            mLastClickTime = nowTime;
+
             MsgConversation msgConversation = vm.conversations.getValue().get(position);
             Intent intent = new Intent(getContext(), ChatActivity.class)
-                .putExtra(K_NAME, msgConversation.conversationInfo.getShowName());
+                .putExtra(Constant.K_NAME, msgConversation.conversationInfo.getShowName());
+            if (msgConversation.conversationInfo.getConversationType() == Constant.SessionType.SINGLE_CHAT)
+                intent.putExtra(Constant.K_ID, msgConversation.conversationInfo.getUserID());
 
-            if (msgConversation.conversationInfo.getConversationType() == 1)
-                intent.putExtra(ID, msgConversation.conversationInfo.getUserID());
-            if (msgConversation.conversationInfo.getConversationType() == 2)
-                intent.putExtra(GROUP_ID, msgConversation.conversationInfo.getGroupID());
+            if (msgConversation.conversationInfo.getConversationType() == Constant.SessionType.GROUP_CHAT
+                || msgConversation.conversationInfo.getConversationType() == Constant.SessionType.SUPER_GROUP)
+                intent.putExtra(Constant.K_GROUP_ID, msgConversation.conversationInfo.getGroupID());
+
+            if (msgConversation.conversationInfo.getGroupAtType() == Constant.SessionType.NOTIFICATION)
+                intent.putExtra(Constant.K_NOTICE, msgConversation.notificationMsg);
 
             startActivity(intent);
+            //重置强提醒
+            if (msgConversation.conversationInfo.getGroupAtType() == Constant.GroupAtType.groupNotification)
+                OpenIMClient.getInstance().conversationManager.resetConversationGroupAtType(null, msgConversation.conversationInfo.getConversationID());
         });
 
-        CustomAdapter adapter = new CustomAdapter(getContext());
+        adapter = new CustomAdapter(getContext());
         view.recyclerView.setAdapter(adapter);
 
 //        view.recyclerView.addItemDecoration(new DefaultItemDecoration(getActivity().getColor(android.R.color.transparent), 1, 36));
@@ -129,6 +156,10 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
         Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onSuccess(Object body) {
+        super.onSuccess(body);
+    }
 
     static class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
@@ -141,6 +172,10 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
 
         public void setConversationInfos(List<MsgConversation> conversationInfos) {
             this.conversationInfos = conversationInfos;
+        }
+
+        public List<MsgConversation> getConversationInfos() {
+            return conversationInfos;
         }
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -164,11 +199,20 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
 
             viewHolder.viewBinding.avatar.load(msgConversation.conversationInfo.getFaceURL(), msgConversation.conversationInfo.getConversationType() == Constant.SessionType.GROUP_CHAT);
             viewHolder.viewBinding.nickName.setText(msgConversation.conversationInfo.getShowName());
-            viewHolder.viewBinding.lastMsg.setText(msgConversation.lastMsg.getContent());
+
+            String lastMsg = IMUtil.getMsgParse(msgConversation.lastMsg);
+            if (msgConversation.lastMsg.getContentType() == Constant.MsgType.BULLETIN
+                && null != msgConversation.notificationMsg && null != msgConversation.notificationMsg.group
+                && !TextUtils.isEmpty(msgConversation.notificationMsg.group.notification))
+                lastMsg = "[" + context.getString(io.openim.android.ouicore.R.string.group_bulletin) + "]"
+                    + msgConversation.notificationMsg.group.notification;
+
+            viewHolder.viewBinding.lastMsg.setText(lastMsg);
             viewHolder.viewBinding.badge.badge.setVisibility(msgConversation.conversationInfo.getUnreadCount() != 0 ? View.VISIBLE : View.GONE);
             viewHolder.viewBinding.badge.badge.setText(msgConversation.conversationInfo.getUnreadCount() + "");
             viewHolder.viewBinding.time.setText(TimeUtil.getTimeString(msgConversation.conversationInfo.getLatestMsgSendTime()));
         }
+
 
         @Override
         public int getItemCount() {
@@ -176,4 +220,9 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        BaseApp.viewModels.remove(vm.getClass().getCanonicalName());
+    }
 }

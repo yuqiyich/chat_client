@@ -22,47 +22,93 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.openim.android.ouicore.adapter.RecyclerViewAdapter;
+import io.openim.android.ouicore.adapter.ViewHol;
 import io.openim.android.ouicore.base.BaseActivity;
-import io.openim.android.ouicore.utils.Common;
-import io.openim.android.ouicore.utils.L;
+import io.openim.android.ouicore.entity.ExGroupMemberInfo;
+import io.openim.android.ouicore.entity.ExUserInfo;
+
+import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.utils.Routes;
-import io.openim.android.ouicore.utils.SinkHelper;
+
+
+import io.openim.android.ouigroup.R;
 import io.openim.android.ouigroup.databinding.ActivityInitiateGroupBinding;
-import io.openim.android.ouigroup.databinding.ItemPsrsonSelectBinding;
-import io.openim.android.ouigroup.databinding.ItemPsrsonStickyBinding;
-import io.openim.android.ouigroup.entity.ExUserInfo;
+
 import io.openim.android.ouigroup.vm.GroupVM;
-import io.openim.android.sdk.OpenIMClient;
+
 import io.openim.android.sdk.models.FriendInfo;
 
+/**
+ * 发起群聊/邀请入群/移除群聊/选择群成员
+ */
 @Route(path = Routes.Group.CREATE_GROUP)
 public class InitiateGroupActivity extends BaseActivity<GroupVM, ActivityInitiateGroupBinding> {
+
     private RecyclerViewAdapter<ExUserInfo, RecyclerView.ViewHolder> adapter;
+
+
+    //邀请入群
+    public static final String IS_INVITE_TO_GROUP = "isInviteToGroup";
+    //移除群聊
+    public static final String IS_REMOVE_GROUP = "isRemoveGroup";
+    //选择群成员
+    public static final String IS_SELECT_MEMBER = "isSelectMember";
+    public static final String MAX_NUM = "max_num";
+
+    private boolean isInviteToGroup = false;
+    private boolean isRemoveGroup = false;
+    private boolean isSelectMember = false;
+    private int maxNum;
+
+    //选择的人数
+    private int selectMemberNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        bindVM(GroupVM.class, true);
+        isInviteToGroup = getIntent().getBooleanExtra(IS_INVITE_TO_GROUP, false);
+        isRemoveGroup = getIntent().getBooleanExtra(IS_REMOVE_GROUP, false);
+
+        isSelectMember = getIntent().getBooleanExtra(IS_SELECT_MEMBER, false);
+        maxNum = getIntent().getIntExtra(MAX_NUM, 0);
+        String groupId = getIntent().getStringExtra(Constant.K_GROUP_ID);
+
+        if (isInviteToGroup
+            || isRemoveGroup)
+            bindVMByCache(GroupVM.class);
+        else
+            bindVM(GroupVM.class, true);
+
         super.onCreate(savedInstanceState);
         bindViewDataBinding(ActivityInitiateGroupBinding.inflate(getLayoutInflater()));
+
         initView();
 
-        vm.getAllFriend();
+        if (isSelectMember) {
+            vm.groupId = groupId;
+            vm.getGroupMemberList();
+        } else
+            vm.getAllFriend();
         listener();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        removeCacheVM();
-    }
-
-    private void toBack(View view) {
-        finish();
+        if (!isInviteToGroup
+            && !isRemoveGroup)
+            removeCacheVM();
     }
 
     private void initView() {
-        setLightStatus();
-        SinkHelper.get(this).setTranslucentStatus(view.getRoot());
+        sink();
+        if (isInviteToGroup)
+            view.title.setText(io.openim.android.ouicore.R.string.Invite_to_the_group);
+        if (isRemoveGroup)
+            view.title.setText(io.openim.android.ouicore.R.string.remove_group);
+        if (isSelectMember) {
+            view.title.setText(io.openim.android.ouicore.R.string.selete_member);
+            view.submit.setText("确定（0/" + maxNum + "）");
+        }
 
         view.scrollView.fullScroll(View.FOCUS_DOWN);
         view.recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -103,29 +149,46 @@ public class InitiateGroupActivity extends BaseActivity<GroupVM, ActivityInitiat
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 if (viewType == ITEM)
-                    return new ItemViewHo(parent);
+                    return new ViewHol.ItemViewHo(parent);
 
-                return new StickyViewHo(parent);
+                return new ViewHol.StickyViewHo(parent);
             }
 
             @Override
             public void onBindView(@NonNull RecyclerView.ViewHolder holder, ExUserInfo data, int position) {
                 if (getItemViewType(position) == ITEM) {
-                    ItemViewHo itemViewHo = (ItemViewHo) holder;
-                    FriendInfo friendInfo = data.userInfo.getFriendInfo();
-                    itemViewHo.view.avatar.load(friendInfo.getFaceURL());
-                    itemViewHo.view.nickName.setText(friendInfo.getNickname());
+                    ViewHol.ItemViewHo itemViewHo = (ViewHol.ItemViewHo) holder;
+                    if (isRemoveGroup || isSelectMember) {
+                        ExGroupMemberInfo memberInfo = data.exGroupMemberInfo;
+                        itemViewHo.view.avatar.load(memberInfo.groupMembersInfo.getFaceURL());
+                        itemViewHo.view.nickName.setText(memberInfo.groupMembersInfo.getNickname());
+                    } else {
+                        FriendInfo friendInfo = data.userInfo.getFriendInfo();
+                        itemViewHo.view.avatar.load(friendInfo.getFaceURL());
+                        itemViewHo.view.nickName.setText(friendInfo.getNickname());
+                    }
+                    itemViewHo.view.select.setVisibility(View.VISIBLE);
                     itemViewHo.view.select.setChecked(data.isSelect);
-                    itemViewHo.view.item.setOnClickListener(v -> {
-                        data.isSelect = !data.isSelect;
-                        notifyItemChanged(position);
-                        int num = getSelectNum();
-                        view.selectNum.setText("已选择：" + num + "人");
-                        view.submit.setText("确定（" + num + "/999）");
-                        view.submit.setEnabled(num > 0);
-                    });
+                    if (!data.isEnabled)
+                        itemViewHo.view.item.setOnClickListener(null);
+                    else
+                        itemViewHo.view.item.setOnClickListener(v -> {
+                            if (isSelectMember && selectMemberNum >= maxNum) {
+                                toast("最多能选择" + maxNum + "人");
+                                return;
+                            }
+                            data.isSelect = !data.isSelect;
+                            notifyItemChanged(position);
+                            selectMemberNum = getSelectNum();
+                            view.selectNum.setText("已选择：" + selectMemberNum + "人");
+                            if (isSelectMember)
+                                view.submit.setText("确定（" + selectMemberNum + "/" + maxNum + "）");
+                            else
+                                view.submit.setText("确定（" + selectMemberNum + "/999）");
+                            view.submit.setEnabled(selectMemberNum > 0);
+                        });
                 } else {
-                    StickyViewHo stickyViewHo = (StickyViewHo) holder;
+                    ViewHol.StickyViewHo stickyViewHo = (ViewHol.StickyViewHo) holder;
                     stickyViewHo.view.title.setText(data.sortLetter);
                 }
 
@@ -139,8 +202,14 @@ public class InitiateGroupActivity extends BaseActivity<GroupVM, ActivityInitiat
         List<FriendInfo> friendInfos = new ArrayList<>();
         int num = 0;
         for (ExUserInfo item : adapter.getItems()) {
-            if (item.isSelect) {
+            if (item.isSelect && item.isEnabled) {
                 num++;
+                if (isRemoveGroup || isSelectMember) {
+                    FriendInfo friendInfo = new FriendInfo();
+                    friendInfo.setUserID(item.exGroupMemberInfo.groupMembersInfo.getUserID());
+                    friendInfos.add(friendInfo);
+                    continue;
+                }
                 friendInfos.add(item.userInfo.getFriendInfo());
             }
         }
@@ -149,20 +218,41 @@ public class InitiateGroupActivity extends BaseActivity<GroupVM, ActivityInitiat
     }
 
     private void listener() {
-        vm.letters.observe(this, v -> {
-            if (null == v || v.isEmpty()) return;
-            StringBuilder letters = new StringBuilder();
-            for (String s : v) {
-                letters.append(s);
-            }
-            view.sortView.setLetters(letters.toString());
-        });
-
-
-        vm.exUserInfo.observe(this, v -> {
-            if (null == v || v.isEmpty()) return;
-            adapter.setItems(v);
-        });
+        if (isRemoveGroup || isSelectMember) {
+            vm.groupLetters.observe(this, v -> {
+                if (null == v || v.isEmpty()) return;
+                StringBuilder letters = new StringBuilder();
+                for (String s : v) {
+                    letters.append(s);
+                }
+                view.sortView.setLetters(letters.toString());
+            });
+            vm.exGroupMembers.observe(this, v -> {
+                if (null == v || v.isEmpty()) return;
+                List<ExUserInfo> exUserInfos = new ArrayList<>();
+                for (ExGroupMemberInfo exGroupMemberInfo : v) {
+                    ExUserInfo exUserInfo = new ExUserInfo();
+                    exUserInfo.sortLetter = exGroupMemberInfo.sortLetter;
+                    exUserInfo.exGroupMemberInfo = exGroupMemberInfo;
+                    exUserInfos.add(exUserInfo);
+                }
+                adapter.setItems(exUserInfos);
+            });
+        } else {
+            vm.letters.observe(this, v -> {
+                if (null == v || v.isEmpty()) return;
+                StringBuilder letters = new StringBuilder();
+                for (String s : v) {
+                    letters.append(s);
+                }
+                view.sortView.setLetters(letters.toString());
+            });
+            vm.exUserInfo.observe(this, v -> {
+                if (null == v || v.isEmpty()) return;
+                List<ExUserInfo> exUserInfos = new ArrayList<>(v);
+                adapter.setItems(exUserInfos);
+            });
+        }
 
         view.sortView.setOnLetterChangedListener((letter, position) -> {
             for (int i = 0; i < adapter.getItems().size(); i++) {
@@ -179,9 +269,35 @@ public class InitiateGroupActivity extends BaseActivity<GroupVM, ActivityInitiat
             }
         });
         view.submit.setOnClickListener(v -> {
-            createLauncher.launch(new Intent(this,CreateGroupActivity.class));
+            if (isInviteToGroup) {
+                vm.inviteUserToGroup(vm.selectedFriendInfo.getValue());
+                return;
+            }
+            if (isRemoveGroup) {
+                vm.kickGroupMember(vm.selectedFriendInfo.getValue());
+                return;
+            }
+            if (isSelectMember) {
+                ArrayList<String> ids = new ArrayList<>();
+                for (FriendInfo friendInfo : vm.selectedFriendInfo.getValue()) {
+                    ids.add(friendInfo.getUserID());
+                }
+                setResult(RESULT_OK, new Intent()
+                    .putStringArrayListExtra(Constant.K_RESULT, ids));
+                finish();
+                return;
+
+            }
+            createLauncher.launch(new Intent(this, CreateGroupActivity.class));
         });
     }
+
+    @Override
+    public void onSuccess(Object body) {
+        super.onSuccess(body);
+        finish();
+    }
+
     private final ActivityResultLauncher<Intent> createLauncher = registerForActivityResult(
         new ActivityResultContracts.StartActivityForResult(),
         result -> {
@@ -190,21 +306,4 @@ public class InitiateGroupActivity extends BaseActivity<GroupVM, ActivityInitiat
             }
         });
 
-    public static class ItemViewHo extends RecyclerView.ViewHolder {
-        ItemPsrsonSelectBinding view;
-
-        public ItemViewHo(@NonNull View itemView) {
-            super(ItemPsrsonSelectBinding.inflate(LayoutInflater.from(itemView.getContext()), (ViewGroup) itemView, false).getRoot());
-            view = ItemPsrsonSelectBinding.bind(this.itemView);
-        }
-    }
-
-    public static class StickyViewHo extends RecyclerView.ViewHolder {
-        ItemPsrsonStickyBinding view;
-
-        public StickyViewHo(@NonNull View itemView) {
-            super(ItemPsrsonStickyBinding.inflate(LayoutInflater.from(itemView.getContext()), (ViewGroup) itemView, false).getRoot());
-            view = ItemPsrsonStickyBinding.bind(this.itemView);
-        }
-    }
 }

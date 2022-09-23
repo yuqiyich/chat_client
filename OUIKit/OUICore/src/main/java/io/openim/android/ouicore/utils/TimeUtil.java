@@ -1,7 +1,5 @@
 package io.openim.android.ouicore.utils;
 
-import android.content.Context;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -10,19 +8,22 @@ import io.openim.android.ouicore.R;
 import io.openim.android.ouicore.base.BaseApp;
 
 public class TimeUtil {
+    public final static String minuteTimeFormat = "mm:ss";
+    public final static String hourTimeFormat = "HH:mm";
+    public final static String monthTimeFormat = "MM/dd HH:mm";
+    public final static String yearTimeFormat = "yyyy/MM/dd HH:mm";
+    public final static String yearMonthDayFormat = "yyyy/MM/dd";
 
     public static String getTimeString(Long timestamp) {
         String result = "";
-        String weekNames[] = {BaseApp.instance().getString(R.string.sunday),
-                BaseApp.instance().getString(R.string.monday),
-                BaseApp.instance().getString(R.string.tuesday),
-                BaseApp.instance().getString(R.string.wednesday),
-                BaseApp.instance().getString(R.string.thursday),
-                BaseApp.instance().getString(R.string.friday),
-                BaseApp.instance().getString(R.string.saturday)};
-        String hourTimeFormat = "HH:mm";
-        String monthTimeFormat = "M/d HH:mm";
-        String yearTimeFormat = "yyyy/M/d HH:mm";
+        String weekNames[] = {BaseApp.inst().getString(R.string.sunday),
+            BaseApp.inst().getString(R.string.monday),
+            BaseApp.inst().getString(R.string.tuesday),
+            BaseApp.inst().getString(R.string.wednesday),
+            BaseApp.inst().getString(R.string.thursday),
+            BaseApp.inst().getString(R.string.friday),
+            BaseApp.inst().getString(R.string.saturday)};
+
         try {
             Calendar todayCalendar = Calendar.getInstance();
             Calendar calendar = Calendar.getInstance();
@@ -73,5 +74,19 @@ public class TimeUtil {
         return format.format(date);
     }
 
+    public static String secondFormat(int second, boolean isZh) {
+        int minute = (second / 60);
+        int hour = (minute / 60);
+        if (hour != 0)
+            return repair0(hour) + (isZh ? "时" : ":")
+                + repair0(minute) + (isZh ? "分" : ":") + repair0(second) + (isZh ? "秒" : "");
+        if (minute != 0)
+            return repair0(minute) + (isZh ? "分" : ":") + repair0(second);
+        return repair0(second) + (isZh ? "秒" : "");
+    }
+
+    private static String repair0(int v) {
+        return v < 10 ? ("0" + v) : (v + "");
+    }
 
 }

@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import io.openim.android.ouicore.utils.L;
+
 public abstract class RecyclerViewAdapter<T, V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<V> {
 
     private List<T> items;
@@ -39,8 +41,8 @@ public abstract class RecyclerViewAdapter<T, V extends RecyclerView.ViewHolder> 
             return viewHolder.getConstructor(View.class).newInstance(parent);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
             e.printStackTrace();
+            throw new NullPointerException();
         }
-        return null;
     }
 
     @Override
@@ -56,3 +58,5 @@ public abstract class RecyclerViewAdapter<T, V extends RecyclerView.ViewHolder> 
     }
 
 }
+
+

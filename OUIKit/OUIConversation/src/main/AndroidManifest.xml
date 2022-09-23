@@ -13,6 +13,15 @@
 
     <application android:theme="@style/Theme.Demo">
         <activity
+            android:name=".ui.SetChatBgActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ChatSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ChatHistoryDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.PreviewActivity"
             android:exported="false" />
         <activity

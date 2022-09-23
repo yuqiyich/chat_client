@@ -16,22 +16,32 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.yanzhenjie.permission.AndPermission;
+
 import io.openim.android.demo.R;
 import io.openim.android.demo.databinding.ActivityLoginBinding;
 import io.openim.android.demo.vm.LoginVM;
 import io.openim.android.ouicore.base.BaseActivity;
+import io.openim.android.ouicore.utils.Common;
+import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.utils.SinkHelper;
+import io.openim.android.ouicore.widget.WaitDialog;
 
-public class LoginActivity extends BaseActivity<LoginVM,ActivityLoginBinding> implements LoginVM.ViewAction {
+public class LoginActivity extends BaseActivity<LoginVM, ActivityLoginBinding> implements LoginVM.ViewAction {
+
+    public static final String FORM_LOGIN = "form_login";
+    private WaitDialog waitDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndPermission.with(this).overlay().start();
         super.onCreate(savedInstanceState);
         bindVM(LoginVM.class, true);
         bindViewDataBinding(ActivityLoginBinding.inflate(getLayoutInflater()));
         setLightStatus();
         SinkHelper.get(this).setTranslucentStatus(null);
 
+        waitDialog = new WaitDialog(this);
         view.loginContent.setLoginVM(vm);
         click();
         listener();
@@ -74,6 +84,7 @@ public class LoginActivity extends BaseActivity<LoginVM,ActivityLoginBinding> im
         view.loginContent.registerTv.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
 
         view.submit.setOnClickListener(v -> {
+            waitDialog.show();
             vm.login();
         });
     }
@@ -84,12 +95,15 @@ public class LoginActivity extends BaseActivity<LoginVM,ActivityLoginBinding> im
 
     @Override
     public void jump() {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class).putExtra(FORM_LOGIN,
+            true));
+        waitDialog.dismiss();
         finish();
     }
 
     @Override
     public void err(String msg) {
+        waitDialog.dismiss();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
