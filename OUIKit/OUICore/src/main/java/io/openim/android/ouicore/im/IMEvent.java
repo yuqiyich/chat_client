@@ -30,17 +30,21 @@ public class IMEvent {
     private List<OnConnListener> connListeners;
     private List<OnAdvanceMsgListener> advanceMsgListeners;
     private List<OnConversationListener> conversationListeners;
+    private List<OnGroupListener> groupListeners;
+    private List<OnFriendshipListener> friendshipListeners;
 
     public void init() {
         connListeners = new ArrayList<>();
         advanceMsgListeners = new ArrayList<>();
         conversationListeners = new ArrayList<>();
+        groupListeners = new ArrayList<>();
+        friendshipListeners = new ArrayList<>();
 
         userListener();
         advanceMsgListener();
         friendshipListener();
         conversationListener();
-        groupListener();
+        groupListeners();
     }
 
     public static synchronized IMEvent getInstance() {
@@ -80,6 +84,28 @@ public class IMEvent {
 
     public void removeAdvanceMsgListener(OnAdvanceMsgListener onAdvanceMsgListener) {
         advanceMsgListeners.remove(onAdvanceMsgListener);
+    }
+
+    // 群组关系发生改变监听
+    public void addGroupListener(OnGroupListener onGroupListener) {
+        if (!groupListeners.contains(onGroupListener)) {
+            groupListeners.add(onGroupListener);
+        }
+    }
+
+    public void removeGroupListener(OnGroupListener onGroupListener) {
+        groupListeners.remove(onGroupListener);
+    }
+
+    // 好友关系发生改变监听
+    public void addFriendListener(OnFriendshipListener onFriendshipListener) {
+        if (!friendshipListeners.contains(onFriendshipListener)) {
+            friendshipListeners.add(onFriendshipListener);
+        }
+    }
+
+    public void removeFriendListener(OnFriendshipListener onFriendshipListener) {
+        friendshipListeners.remove(onFriendshipListener);
     }
 
 
@@ -128,26 +154,38 @@ public class IMEvent {
 
 
     // 群组关系发生改变监听
-    private void groupListener() {
+    private void groupListeners() {
         OpenIMClient.getInstance().groupManager.setOnGroupListener(new OnGroupListener() {
             @Override
             public void onGroupApplicationAccepted(GroupApplicationInfo info) {
                 // 发出或收到的组申请被接受
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onGroupApplicationAccepted(info);
+                }
             }
 
             @Override
             public void onGroupApplicationAdded(GroupApplicationInfo info) {
                 // 发出或收到的组申请有新增
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onGroupApplicationAdded(info);
+                }
             }
 
             @Override
             public void onGroupApplicationDeleted(GroupApplicationInfo info) {
                 // 发出或收到的组申请被删除
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onGroupApplicationDeleted(info);
+                }
             }
 
             @Override
             public void onGroupApplicationRejected(GroupApplicationInfo info) {
                 // 发出或收到的组申请被拒绝
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onGroupApplicationRejected(info);
+                }
             }
 
             @Override
@@ -173,11 +211,17 @@ public class IMEvent {
             @Override
             public void onJoinedGroupAdded(GroupInfo info) {
                 // 创建群： 初始成员收到；邀请进群：被邀请者收到
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onJoinedGroupAdded(info);
+                }
             }
 
             @Override
             public void onJoinedGroupDeleted(GroupInfo info) {
                 // 退出群：退出者收到；踢出群：被踢者收到
+                for (OnGroupListener onGroupListener : groupListeners) {
+                    onGroupListener.onJoinedGroupDeleted(info);
+                }
             }
         });
     }
@@ -245,6 +289,9 @@ public class IMEvent {
             @Override
             public void onFriendApplicationAdded(FriendApplicationInfo u) {
                 // 发出或收到的好友申请被添加
+                for (OnFriendshipListener friendshipListener : friendshipListeners) {
+                    friendshipListener.onFriendApplicationAdded(u);
+                }
             }
 
             @Override

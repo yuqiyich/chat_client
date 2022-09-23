@@ -12,6 +12,7 @@ import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
+
 /**
  * There's only one corner of the universe you can be sure of improving, and that's your own self.
  */
@@ -62,6 +63,7 @@ public abstract class NetObserver<T> implements Observer<T> {
 
     @Override
     public void onError(@NonNull Throwable e) {
+        onComplete();
         if (!isConnected()) {
             e = new NetworkException();
         }

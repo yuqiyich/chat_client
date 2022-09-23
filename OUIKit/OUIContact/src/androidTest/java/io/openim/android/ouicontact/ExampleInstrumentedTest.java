@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("io.openim.android.OUIContact.test", appContext.getPackageName());
+        assertEquals("io.openim.android.ouicontact.test", appContext.getPackageName());
     }
 }

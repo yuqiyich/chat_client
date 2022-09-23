@@ -1,27 +1,19 @@
 package io.openim.android.ouicontact;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-import io.openim.android.ouicontact.databinding.ActivityDebugBinding;
-import io.openim.android.ouicontact.ui.ContactListFragment;
-import io.openim.android.ouicore.base.BaseActivity;
-import io.openim.android.ouicore.im.IM;
-import io.openim.android.sdk.OpenIMClient;
-import io.openim.android.sdk.listener.OnBase;
+import io.openim.android.ouicontact.ui.ContactFragment;
 
-public class DebugActivity extends io.openim.android.ouicore.widget.DebugActivity {
-    ActivityDebugBinding view;
+public class DebugActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        view=ActivityDebugBinding.inflate(getLayoutInflater());
-        setContentView(view.getRoot());
-    }
+        setContentView(R.layout.activity_debug);
 
-    @Override
-    public void onSuccess(String data) {
-        super.onSuccess(data);
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, ContactListFragment.newInstance()).commit();
+            .add(R.id.fragment_container, new ContactFragment()).commit();
     }
 }

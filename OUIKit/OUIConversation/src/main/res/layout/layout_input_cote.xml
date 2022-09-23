@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="ChatVM"
+            type="io.openim.android.ouiconversation.vm.ChatVM" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:focusableInTouchMode="true"
+        android:tag="layout/layout_input_cote_0"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#E8F2FF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <CheckBox
+                android:id="@+id/voice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:button="@null"
+                android:drawableLeft="@drawable/selector_chat_checkbox"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/chatInput"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/sty_radius_4_white"
+                android:maxHeight="80dp"
+                android:minHeight="32dp"
+                android:paddingLeft="3dp"
+                android:text="@={ChatVM.inputMsg}"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/touchSay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/touch_say"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/chatMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="true"
+                android:padding="7dp"
+                android:src="@mipmap/ic_chat_add" />
+
+            <Button
+                android:id="@+id/chatSend"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:text="@string/send"
+                android:visibility="visible"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

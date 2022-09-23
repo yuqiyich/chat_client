@@ -1,6 +1,5 @@
 package io.openim.android.demo.ui.login;
 
-
 import android.content.Intent;
 
 import io.openim.android.demo.ui.main.MainActivity;
@@ -21,25 +20,19 @@ import io.openim.android.demo.R;
 import io.openim.android.demo.databinding.ActivityLoginBinding;
 import io.openim.android.demo.vm.LoginVM;
 import io.openim.android.ouicore.base.BaseActivity;
-import io.openim.android.ouicore.base.IView;
 import io.openim.android.ouicore.utils.SinkHelper;
 
-public class LoginActivity extends BaseActivity<LoginVM> implements LoginVM.ViewAction {
-
-    ActivityLoginBinding view;
+public class LoginActivity extends BaseActivity<LoginVM,ActivityLoginBinding> implements LoginVM.ViewAction {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        view = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(view.getRoot());
+        bindVM(LoginVM.class, true);
+        bindViewDataBinding(ActivityLoginBinding.inflate(getLayoutInflater()));
         setLightStatus();
         SinkHelper.get(this).setTranslucentStatus(null);
 
-        bindVM(LoginVM.class);
         view.loginContent.setLoginVM(vm);
-
-
         click();
         listener();
     }
@@ -66,7 +59,6 @@ public class LoginActivity extends BaseActivity<LoginVM> implements LoginVM.View
         });
         vm.account.observe(this, v -> submitEnabled());
         vm.pwd.observe(this, v -> submitEnabled());
-
     }
 
     private void click() {
@@ -79,7 +71,7 @@ public class LoginActivity extends BaseActivity<LoginVM> implements LoginVM.View
         view.loginContent.clear.setOnClickListener(v -> view.loginContent.edt1.setText(""));
         view.loginContent.eyes.setOnCheckedChangeListener((buttonView, isChecked) -> view.loginContent.edt2.setTransformationMethod(isChecked ? HideReturnsTransformationMethod.getInstance() : PasswordTransformationMethod.getInstance()));
         view.protocol.setOnCheckedChangeListener((buttonView, isChecked) -> submitEnabled());
-        view.loginContent.registerTv.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class).putExtra(RegisterActivity.IS_PHONE, vm.isPhone.getValue())));
+        view.loginContent.registerTv.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
 
         view.submit.setOnClickListener(v -> {
             vm.login();
@@ -97,8 +89,13 @@ public class LoginActivity extends BaseActivity<LoginVM> implements LoginVM.View
     }
 
     @Override
-    public void loginErr(String msg) {
+    public void err(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void succ(Object o) {
+
     }
 
     @Override
