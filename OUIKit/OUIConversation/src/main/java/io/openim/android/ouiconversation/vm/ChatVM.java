@@ -33,6 +33,7 @@ import io.openim.android.ouicore.im.IMUtil;
 import io.openim.android.ouicore.net.bage.GsonHel;
 import io.openim.android.ouicore.utils.FixSizeLinkedList;
 import io.openim.android.ouicore.utils.L;
+import io.openim.android.ouicore.utils.TimeUtil;
 import io.openim.android.ouicore.widget.WaitDialog;
 import io.openim.android.sdk.OpenIMClient;
 
@@ -40,20 +41,26 @@ import io.openim.android.sdk.enums.ConversationType;
 import io.openim.android.sdk.listener.OnAdvanceMsgListener;
 import io.openim.android.sdk.listener.OnBase;
 import io.openim.android.sdk.listener.OnMsgSendCallback;
+import io.openim.android.sdk.models.AdvancedMessage;
 import io.openim.android.sdk.models.ConversationInfo;
+import io.openim.android.sdk.models.GroupInfo;
 import io.openim.android.sdk.models.Message;
 import io.openim.android.sdk.models.NotDisturbInfo;
 import io.openim.android.sdk.models.OfflinePushInfo;
 import io.openim.android.sdk.models.ReadReceiptInfo;
 import io.openim.android.sdk.models.RevokedInfo;
+import io.openim.android.sdk.models.SearchResult;
+import io.openim.android.sdk.models.SearchResultItem;
 import io.openim.android.sdk.models.UserInfo;
 
 public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanceMsgListener {
+    //搜索的本地消息
+    public MutableLiveData<List<Message>> searchMessageItems = new MutableLiveData<>(new ArrayList<>());
+    public MutableLiveData<List<Message>> addSearchMessageItems = new MutableLiveData<>(new ArrayList<>());
 
-    //会话信息
-    public MutableLiveData<ConversationInfo> conversationInfo = new MutableLiveData<>();
     public MutableLiveData<Integer> notDisturbStatus = new MutableLiveData<>(0);
     //通知消息
+    public MutableLiveData<ConversationInfo> conversationInfo = new MutableLiveData<>();
     public MutableLiveData<NotificationMsg> notificationMsg = new MutableLiveData<>();
     public MutableLiveData<List<Message>> messages = new MutableLiveData<>(new ArrayList<>());
     //@消息
@@ -69,52 +76,80 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
 
     private MessageAdapter messageAdapter;
     private Observer<String> inputObserver;
-    Message startMsg = null; // 消息体，取界面上显示的消息体对象
-    public String otherSideID = ""; // 接受消息Id
+    public Message startMsg = null; // 消息体，取界面上显示的消息体对象/搜索时的起始坐标
+    public String otherSideID = ""; // 接受消息的用户Id
     public String groupID = ""; // 接受消息的群ID
     public boolean isSingleChat = true; //是否单聊 false 群聊
     public boolean isSuperGroup = false;//是否超级大群
     public boolean isVideoCall = true;//是否是视频通话
+    public boolean fromChatHistory = false;//从查看聊天记录跳转过来
+    public boolean firstChatHistory = true;// //用于第一次消息定位
     public int count = 20; //条数
-    public Message loading, forwardMsg;
 
-    @Override
-    protected void viewCreate() {
-        super.viewCreate();
+    public Message loading, forwardMsg;
+    private int lastMinSeq = 0;
+
+    public void init() {
         loading = new Message();
         loading.setContentType(Constant.LOADING);
         //获取会话信息
         getConversationInfo();
         //标记所有消息已读
         markReaded(null);
-        if (isSingleChat) {
-            //加载消息记录
-            loadHistoryMessage();
+        if (isSingleChat)
             listener();
-        }
+
         IMEvent.getInstance().addAdvanceMsgListener(this);
     }
 
     private void getConversationInfo() {
+        if (isSingleChat) {
+            getOneConversation();
+        } else {
+            List<String> groupIds = new ArrayList<>();
+            groupIds.add(groupID);
+            OpenIMClient.getInstance().groupManager.getGroupsInfo(new OnBase<List<GroupInfo>>() {
+                @Override
+                public void onError(int code, String error) {
+                    IView.toast(error + code);
+                }
+
+                @Override
+                public void onSuccess(List<GroupInfo> data) {
+                    if (data.isEmpty()) return;
+                    GroupInfo groupInfo = data.get(0);
+                    isSuperGroup =
+                        groupInfo.getGroupType() == 2;
+                    getOneConversation();
+                }
+            }, groupIds);
+        }
+    }
+
+    private void getOneConversation() {
         OpenIMClient.getInstance().conversationManager.getOneConversation(new OnBase<ConversationInfo>() {
             @Override
             public void onError(int code, String error) {
-
+                IView.toast(error);
             }
 
             @Override
             public void onSuccess(ConversationInfo data) {
-                isSuperGroup =
-                    data.getConversationType() == Constant.SessionType.SUPER_GROUP;
-                if (!isSingleChat) {
-                    //加载消息记录
-                    loadHistoryMessage();
-                }
                 conversationInfo.setValue(data);
+                loadHistory();
                 getConversationRecvMessageOpt(data.getConversationID());
             }
         }, isSingleChat ? otherSideID : groupID, isSingleChat ?
-            Constant.SessionType.SINGLE_CHAT : Constant.SessionType.GROUP_CHAT);
+            Constant.SessionType.SINGLE_CHAT : isSuperGroup ? Constant.SessionType.SUPER_GROUP
+            : Constant.SessionType.GROUP_CHAT);
+    }
+
+    private void loadHistory() {
+        //加载消息记录
+        if (fromChatHistory)
+            loadHistoryMessageReverse();
+        else
+            loadHistoryMessage();
     }
 
     @Override
@@ -163,17 +198,18 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
     public void loadHistoryMessage() {
         if (isSuperGroup) {
             OpenIMClient.getInstance().messageManager.getAdvancedHistoryMessageList(
-                new OnBase<List<Message>>() {
+                new OnBase<AdvancedMessage>() {
                     @Override
                     public void onError(int code, String error) {
                         IView.toast(error + code);
                     }
 
                     @Override
-                    public void onSuccess(List<Message> data) {
-                        handleMessage(data);
+                    public void onSuccess(AdvancedMessage data) {
+                        lastMinSeq = data.getLastMinSeq();
+                        handleMessage(data.getMessageList(), false);
                     }
-                }, otherSideID, groupID, null, startMsg, count);
+                }, null, null, conversationInfo.getValue().getConversationID(), lastMinSeq, startMsg, count);
         } else {
             OpenIMClient.getInstance().messageManager.getHistoryMessageList(new OnBase<List<Message>>() {
                 @Override
@@ -183,14 +219,14 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
 
                 @Override
                 public void onSuccess(List<Message> data) {
-                    handleMessage(data);
+                    handleMessage(data, false);
                 }
 
             }, otherSideID, groupID, null, startMsg, count);
         }
     }
 
-    private void handleMessage(List<Message> data) {
+    private void handleMessage(List<Message> data, boolean isReverse) {
         for (Message datum : data) {
             IMUtil.buildExpandInfo(datum);
         }
@@ -208,6 +244,12 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
         if (list.isEmpty()) {
             IMUtil.calChatTimeInterval(data);
             messages.setValue(data);
+            return;
+        }
+        if (isReverse) {
+            list.addAll(0, data);
+            IMUtil.calChatTimeInterval(list);
+            messageAdapter.notifyItemRangeInserted(0, data.size());
             return;
         }
         removeLoading(list);
@@ -244,12 +286,25 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
         typing.set(false);
     };
 
+    /// 是当前聊天窗口
+    Boolean isCurrentChat(Message message) {
+        String senderId = message.getSendID();
+        String receiverId = message.getRecvID();
+        String groupId = message.getGroupID();
+        boolean isCurSingleChat = message.getSessionType()
+            == Constant.SessionType.SINGLE_CHAT &&
+            isSingleChat &&
+            (senderId.equals(otherSideID) ||
+                receiverId.equals(otherSideID));
+        boolean isCurGroupChat = message.getSessionType()
+            != Constant.SessionType.SINGLE_CHAT && !isSingleChat
+            && groupID.equals(groupId);
+        return isCurSingleChat || isCurGroupChat;
+    }
+
     @Override
     public void onRecvNewMessage(Message msg) {
-        if (isSingleChat) {
-            if (TextUtils.isEmpty(msg.getSendID()) || !msg.getSendID().equals(otherSideID)) return;
-        } else if (TextUtils.isEmpty(msg.getGroupID()) || !msg.getGroupID().equals(groupID)) return;
-
+        if (!isCurrentChat(msg)) return;
         boolean isTyp = msg.getContentType() == Constant.MsgType.TYPING;
         if (isSingleChat) {
             if (msg.getSendID().equals(otherSideID)) {
@@ -286,7 +341,26 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
 
     @Override
     public void onRecvGroupMessageReadReceipt(List<ReadReceiptInfo> list) {
-
+        try {
+            for (ReadReceiptInfo readInfo : list) {
+                if (readInfo.getGroupID().equals(groupID)) {
+                    for (Message e : messages.getValue()) {
+                        List<String> uidList =
+                            e.getAttachedInfoElem().getGroupHasReadInfo().getHasReadUserIDList();
+                        if (null == uidList)
+                            uidList = new ArrayList<>();
+                        if (!uidList.contains(readInfo.getUserID()) &&
+                            (readInfo.getMsgIDList().contains(e.getClientMsgID()))) {
+                            uidList.add(readInfo.getUserID());
+                        }
+                        e.getAttachedInfoElem().getGroupHasReadInfo().setHasReadUserIDList(uidList);
+                    }
+                }
+            }
+            messageAdapter.notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -314,6 +388,7 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
 
 
     public void sendMsg(Message msg) {
+        msg.setStatus(Constant.Send_State.SENDING);
         messages.getValue().add(0, IMUtil.buildExpandInfo(msg));
         messageAdapter.notifyItemInserted(0);
 
@@ -324,6 +399,8 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
             @Override
             public void onError(int code, String error) {
                 IView.toast(error + code);
+                msg.setStatus(Constant.Send_State.SEND_FAILED);
+                messageAdapter.notifyItemChanged(messages.getValue().indexOf(msg));
             }
 
             @Override
@@ -376,10 +453,10 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
      * @param message
      */
     public void revokeMessage(Message message) {
-        OpenIMClient.getInstance().messageManager.revokeMessage(new OnBase<String>() {
+        OpenIMClient.getInstance().messageManager.revokeMessageV2(new OnBase<String>() {
             @Override
             public void onError(int code, String error) {
-
+                IView.toast(error + code);
             }
 
             @Override
@@ -461,6 +538,71 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
             }
         }, Arrays.asList(cid), status);
     }
+
+    public void searchLocalMessages(String key, int page, Integer... messageTypes) {
+        List<String> keys = null;
+        if (!TextUtils.isEmpty(key)) {
+            keys = new ArrayList<>();
+            keys.add(key);
+        }
+        List<Integer> messageTypeLists;
+        if (0 == messageTypes.length) {
+            messageTypeLists = new ArrayList<>();
+            messageTypeLists.add(Constant.MsgType.TXT);
+            messageTypeLists.add(Constant.MsgType.MENTION);
+        } else
+            messageTypeLists = Arrays.asList(messageTypes);
+
+        String conversationId = conversationInfo.getValue().getConversationID();
+        OpenIMClient.getInstance()
+            .messageManager
+            .searchLocalMessages
+                (new OnBase<SearchResult>() {
+                     @Override
+                     public void onError(int code, String error) {
+                         IView.toast(error + code);
+                         L.e("");
+                     }
+
+                     @Override
+                     public void onSuccess(SearchResult data) {
+                         if (page == 1) {
+                             searchMessageItems.getValue().clear();
+                         }
+                         if (data.getTotalCount() != 0) {
+                             searchMessageItems.getValue().addAll(data.getSearchResultItems().get(0).getMessageList());
+                             addSearchMessageItems.setValue(data.getSearchResultItems().get(0).getMessageList());
+                         }
+                         searchMessageItems.setValue(searchMessageItems.getValue());
+                     }
+                 }, conversationId,
+                    keys, 0,
+                    new ArrayList<>(), messageTypeLists, 0,
+                    0, page, count);
+    }
+
+    public void loadHistoryMessageReverse() {
+        OpenIMClient.getInstance().messageManager.getHistoryMessageListReverse(
+            new OnBase<List<Message>>() {
+                @Override
+                public void onError(int code, String error) {
+
+                }
+
+                @Override
+                public void onSuccess(List<Message> data) {
+                    if (firstChatHistory) {
+                        data.add(0, startMsg);
+                        firstChatHistory = false;
+                    }
+                    handleMessage(data, true);
+                }
+
+            }, otherSideID, groupID, null, startMsg, count * 50);
+
+
+    }
+
 
     public interface ViewAction extends IView {
         void scrollToPosition(int position);

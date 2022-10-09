@@ -11,6 +11,9 @@ import io.openim.android.ouicore.databinding.ItemGroupShowBinding;
 import io.openim.android.ouicore.databinding.ItemImgTxtBinding;
 import io.openim.android.ouicore.databinding.ItemPsrsonSelectBinding;
 import io.openim.android.ouicore.databinding.ItemPsrsonStickyBinding;
+import io.openim.android.ouicore.databinding.LayoutContactItemBinding;
+import io.openim.android.ouicore.databinding.ViewImageBinding;
+import io.openim.android.ouicore.databinding.ViewRecyclerViewBinding;
 
 public class ViewHol {
 
@@ -24,7 +27,7 @@ public class ViewHol {
     }
 
     public static class StickyViewHo extends RecyclerView.ViewHolder {
-        public final  ItemPsrsonStickyBinding view;
+        public final ItemPsrsonStickyBinding view;
 
         public StickyViewHo(@NonNull View itemView) {
             super(ItemPsrsonStickyBinding.inflate(LayoutInflater.from(itemView.getContext()), (ViewGroup) itemView, false).getRoot());
@@ -33,13 +36,14 @@ public class ViewHol {
     }
 
     public static class GroupViewHo extends RecyclerView.ViewHolder {
-        public final  ItemGroupShowBinding view;
+        public final ItemGroupShowBinding view;
 
         public GroupViewHo(@NonNull View itemView) {
             super(ItemGroupShowBinding.inflate(LayoutInflater.from(itemView.getContext()), (ViewGroup) itemView, false).getRoot());
             view = ItemGroupShowBinding.bind(this.itemView);
         }
     }
+
     public static class ImageTxtViewHolder extends RecyclerView.ViewHolder {
         public ItemImgTxtBinding view;
 
@@ -49,4 +53,30 @@ public class ViewHol {
         }
     }
 
+    public static class ContactItemHolder extends RecyclerView.ViewHolder {
+        public LayoutContactItemBinding viewBinding;
+
+        public ContactItemHolder(@NonNull View itemView) {
+            super(LayoutContactItemBinding.inflate(LayoutInflater.from(itemView.getContext()), (ViewGroup) itemView, false).getRoot());
+            this.viewBinding = LayoutContactItemBinding.bind(this.itemView);
+        }
+    }
+
+    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+        public ViewRecyclerViewBinding viewBinding;
+
+        public RecyclerViewHolder(@NonNull View itemView) {
+            super(ViewRecyclerViewBinding.inflate(LayoutInflater.from(itemView.getContext()), (ViewGroup) itemView, false).getRoot());
+            this.viewBinding = ViewRecyclerViewBinding.bind(this.itemView);
+        }
+    }
+
+    public static class ImageViewHolder extends RecyclerView.ViewHolder {
+        public ViewImageBinding view;
+
+        public ImageViewHolder(@NonNull View itemView) {
+            super(ViewImageBinding.inflate(LayoutInflater.from(itemView.getContext()),(ViewGroup) itemView, false).getRoot());
+            view = ViewImageBinding.bind(this.itemView);
+        }
+    }
 }

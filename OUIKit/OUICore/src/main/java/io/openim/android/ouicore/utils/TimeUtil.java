@@ -1,5 +1,7 @@
 package io.openim.android.ouicore.utils;
 
+import android.annotation.SuppressLint;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,6 +15,8 @@ public class TimeUtil {
     public final static String monthTimeFormat = "MM/dd HH:mm";
     public final static String yearTimeFormat = "yyyy/MM/dd HH:mm";
     public final static String yearMonthDayFormat = "yyyy/MM/dd";
+    public final static String secondFormat = "%02d:%02d:%02d";
+    public final static String secondFormatZh = "%02d时%02d分%02d秒";
 
     public static String getTimeString(Long timestamp) {
         String result = "";
@@ -74,19 +78,44 @@ public class TimeUtil {
         return format.format(date);
     }
 
-    public static String secondFormat(int second, boolean isZh) {
-        int minute = (second / 60);
-        int hour = (minute / 60);
-        if (hour != 0)
-            return repair0(hour) + (isZh ? "时" : ":")
-                + repair0(minute) + (isZh ? "分" : ":") + repair0(second) + (isZh ? "秒" : "");
-        if (minute != 0)
-            return repair0(minute) + (isZh ? "分" : ":") + repair0(second);
-        return repair0(second) + (isZh ? "秒" : "");
+
+    @SuppressLint("DefaultLocale")
+    public static String secondFormat(int second, String format) {
+        int hour = second / 3600; // 得到时
+        second = second % 3600;//剩余的秒数
+        int minute = second / 60;//得到分
+        second = second % 60;//剩余的秒
+        if (null == format)
+            format = secondFormat;
+        if (hour > 0)
+            return String.format(format, hour, minute, second);
+        if (minute > 0)
+            return String.format(format.substring(5),
+                minute, second);
+        if (second > 0)
+            return String.format(format.substring(10), second);
+        return "";
     }
 
     private static String repair0(int v) {
         return v < 10 ? ("0" + v) : (v + "");
     }
 
+
+    //本周/本月/月
+    public static String getTimeRules(long time) {
+        Calendar calendar = Calendar.getInstance();
+        int currentWeek = calendar.get(Calendar.WEEK_OF_YEAR);
+        int currentMonth = calendar.get(Calendar.MONTH);
+        calendar.setTime(new Date(time));
+        int paramWeek = calendar.get(Calendar.WEEK_OF_YEAR);
+        int paramMonth = calendar.get(Calendar.MONTH);
+        if (paramWeek == currentWeek) {
+            return BaseApp.inst().getString(R.string.in_week);
+        }
+        if (paramMonth == currentMonth) {
+            return BaseApp.inst().getString(R.string.in_month);
+        }
+        return paramMonth + "月";
+    }
 }

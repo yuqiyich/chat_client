@@ -20,6 +20,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -33,10 +34,11 @@ import io.openim.android.ouiconversation.R;
 
 import io.openim.android.ouiconversation.adapter.MessageViewHolder;
 import io.openim.android.ouiconversation.databinding.FragmentContactListBinding;
-import io.openim.android.ouiconversation.databinding.LayoutContactItemBinding;
 import io.openim.android.ouiconversation.vm.ContactListVM;
+import io.openim.android.ouicore.adapter.ViewHol;
 import io.openim.android.ouicore.base.BaseApp;
 import io.openim.android.ouicore.base.BaseFragment;
+import io.openim.android.ouicore.databinding.LayoutContactItemBinding;
 import io.openim.android.ouicore.entity.MsgConversation;
 import io.openim.android.ouicore.im.IMUtil;
 import io.openim.android.ouicore.net.bage.Base;
@@ -45,6 +47,7 @@ import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.utils.Routes;
 import io.openim.android.ouicore.utils.TimeUtil;
 import io.openim.android.sdk.OpenIMClient;
+import io.openim.android.sdk.listener.OnBase;
 import io.openim.android.sdk.models.ConversationInfo;
 
 @Route(path = Routes.Conversation.CONTACT_LIST)
@@ -79,7 +82,6 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
     @SuppressLint("NewApi")
     private void init() {
         view.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
         SwipeMenuCreator mSwipeMenuCreator = (leftMenu, rightMenu, position) -> {
             SwipeMenuItem delete = new SwipeMenuItem(getContext());
             delete.setText(R.string.remove);
@@ -89,9 +91,11 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
             delete.setTextColor(getContext().getColor(android.R.color.white));
             delete.setBackgroundColor(Color.parseColor("#FFAB41"));
 
-
+            MsgConversation conversationInfo = vm.conversations.getValue().get(position);
             SwipeMenuItem top = new SwipeMenuItem(getContext());
-            top.setText(R.string.top);
+            top.setText(conversationInfo
+                .conversationInfo.isPinned() ?
+                io.openim.android.ouicore.R.string.cancel_top : R.string.top);
             top.setHeight(MATCH_PARENT);
             top.setWidth(Common.dp2px(73));
             top.setTextSize(16);
@@ -106,7 +110,9 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
         view.recyclerView.setOnItemMenuClickListener((menuBridge, adapterPosition) -> {
             int menuPosition = menuBridge.getPosition();
             if (menuPosition == 0) {
-
+                MsgConversation conversationInfo = vm.conversations.getValue().get(adapterPosition);
+                vm.pinConversation(conversationInfo.conversationInfo,
+                    !conversationInfo.conversationInfo.isPinned());
             } else {
                 MsgConversation conversationInfo = vm.conversations.getValue().get(adapterPosition);
                 vm.conversations.getValue().remove(conversationInfo);
@@ -141,6 +147,8 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
 
         adapter = new CustomAdapter(getContext());
         view.recyclerView.setAdapter(adapter);
+        view.recyclerView.addHeaderView(createHeaderView());
+
 
 //        view.recyclerView.addItemDecoration(new DefaultItemDecoration(getActivity().getColor(android.R.color.transparent), 1, 36));
         vm.conversations.observe(getActivity(), v -> {
@@ -148,6 +156,12 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
             adapter.setConversationInfos(v);
             adapter.notifyDataSetChanged();
         });
+    }
+
+    private View createHeaderView() {
+        View header = getLayoutInflater().inflate(R.layout.view_search, view.recyclerView, false);
+//        header.setOnClickListener(v ->startActivity(new Intent(getActivity(),SearchActivity.class)));
+        return header;
     }
 
 
@@ -161,7 +175,7 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
         super.onSuccess(body);
     }
 
-    static class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+    static class CustomAdapter extends RecyclerView.Adapter<ViewHol.ContactItemHolder> {
 
         private List<MsgConversation> conversationInfos;
         private Context context;
@@ -178,23 +192,14 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
             return conversationInfos;
         }
 
-        public static class ViewHolder extends RecyclerView.ViewHolder {
-            public final LayoutContactItemBinding viewBinding;
-
-            public ViewHolder(LayoutContactItemBinding viewBinding) {
-                super(viewBinding.getRoot());
-                this.viewBinding = viewBinding;
-            }
-        }
-
 
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-            return new ViewHolder(LayoutContactItemBinding.inflate(LayoutInflater.from(viewGroup.getContext())));
+        public ViewHol.ContactItemHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+            return new ViewHol.ContactItemHolder(viewGroup);
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+        public void onBindViewHolder(ViewHol.ContactItemHolder viewHolder, final int position) {
             MsgConversation msgConversation = conversationInfos.get(position);
 
             viewHolder.viewBinding.avatar.load(msgConversation.conversationInfo.getFaceURL(), msgConversation.conversationInfo.getConversationType() == Constant.SessionType.GROUP_CHAT);
@@ -212,8 +217,6 @@ public class ContactListFragment extends BaseFragment<ContactListVM> implements 
             viewHolder.viewBinding.badge.badge.setText(msgConversation.conversationInfo.getUnreadCount() + "");
             viewHolder.viewBinding.time.setText(TimeUtil.getTimeString(msgConversation.conversationInfo.getLatestMsgSendTime()));
         }
-
-
         @Override
         public int getItemCount() {
             return null == conversationInfos ? 0 : conversationInfos.size();
