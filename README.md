@@ -1,3 +1,2 @@
 # Open-IM-Android-Demo
-即时通讯IM Android
-商用必须授权
+仅供学习使用，商用必须授权
