@@ -1,7 +1,9 @@
 package io.openim.android.demo.ui.login;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 
+import io.openim.android.demo.ui.ServerConfigActivity;
 import io.openim.android.demo.ui.main.MainActivity;
 
 import android.database.DatabaseUtils;
@@ -12,6 +14,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +26,7 @@ import io.openim.android.demo.R;
 import io.openim.android.demo.databinding.ActivityLoginBinding;
 import io.openim.android.demo.vm.LoginVM;
 import io.openim.android.ouicore.base.BaseActivity;
+import io.openim.android.ouicore.base.BaseApp;
 import io.openim.android.ouicore.utils.Common;
 import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.utils.SinkHelper;
@@ -71,7 +76,17 @@ public class LoginActivity extends BaseActivity<LoginVM, ActivityLoginBinding> i
         vm.pwd.observe(this, v -> submitEnabled());
     }
 
+    private final GestureDetector gestureDetector =
+        new GestureDetector(BaseApp.inst(), new GestureDetector.SimpleOnGestureListener() {
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            startActivity(new Intent(LoginActivity.this, ServerConfigActivity.class));
+            return super.onDoubleTap(e);
+        }
+    });
+
     private void click() {
+        view.welcome.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
         view.phoneTv.setOnClickListener(v -> {
             vm.isPhone.setValue(true);
         });

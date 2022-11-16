@@ -120,7 +120,7 @@ public class MessageViewHolder {
         if (viewType == Constant.MsgType.MERGE)
             return new MergeView(parent);
 
-        if (viewType == Constant.MsgType.TRANSIT)
+        if (viewType == Constant.MsgType.CARD)
             return new BusinessCardView(parent);
 
         return new TXTView(parent);

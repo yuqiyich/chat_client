@@ -8,10 +8,15 @@ import androidx.lifecycle.Observer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import io.openim.android.demo.R;
 import io.openim.android.demo.databinding.ActivityPersonInfoBinding;
@@ -23,7 +28,11 @@ import io.openim.android.ouiconversation.vm.ChatVM;
 import io.openim.android.ouicore.base.BaseActivity;
 import io.openim.android.ouicore.base.BaseApp;
 import io.openim.android.ouicore.base.BaseViewModel;
+import io.openim.android.ouicore.databinding.LayoutCommonDialogBinding;
+import io.openim.android.ouicore.net.bage.GsonHel;
 import io.openim.android.ouicore.utils.Constant;
+import io.openim.android.ouicore.utils.Obs;
+import io.openim.android.ouicore.utils.Routes;
 import io.openim.android.ouicore.widget.CommonDialog;
 import io.openim.android.ouicore.widget.SlideButton;
 import io.openim.android.ouicore.widget.WaitDialog;
@@ -36,6 +45,7 @@ public class PersonDataActivity extends BaseActivity<PersonalVM, ActivityPersonI
     private ChatVM chatVM;
     private FriendVM friendVM = new FriendVM();
     private WaitDialog waitDialog;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +55,13 @@ public class PersonDataActivity extends BaseActivity<PersonalVM, ActivityPersonI
         sink();
         init();
         listener();
-        chatVM = BaseApp.inst().getVMByCache(ChatVM.class);
-        vm.getUserInfo(chatVM.otherSideID);
+        uid = getIntent().getStringExtra(Constant.K_ID);
+        if (TextUtils.isEmpty(uid)) {
+            chatVM = BaseApp.inst().getVMByCache(ChatVM.class);
+            uid = chatVM.otherSideID;
+            vm.getUserInfo(uid);
+        } else
+            vm.getUserInfo(uid);
     }
 
     @Override
@@ -64,31 +79,63 @@ public class PersonDataActivity extends BaseActivity<PersonalVM, ActivityPersonI
         friendVM.getBlacklist();
     }
 
+    @Override
+    public void onSuccess(Object body) {
+        super.onSuccess(body);
+        setResult(RESULT_OK);
+        finish();
+    }
 
     private void listener() {
+        view.part.setOnClickListener(v -> {
+            CommonDialog commonDialog = new CommonDialog(this);
+            commonDialog.show();
+            LayoutCommonDialogBinding mainView = commonDialog.getMainView();
+            mainView.tips.setText(io.openim.android.ouicore.R.string.delete_friend_tips);
+            mainView.cancel.setOnClickListener(v1 -> commonDialog.dismiss());
+            mainView.confirm.setOnClickListener(v1 -> {
+                commonDialog.dismiss();
+                friendVM.deleteFriend(uid);
+            });
+        });
+        view.recommend.setOnClickListener(v -> {
+            Map<String, String> bean = new HashMap();
+            UserInfo userInfo = vm.exUserInfo.getValue().userInfo;
+            bean.put("userID", userInfo.getUserID());
+            bean.put("nickname", userInfo.getNickname());
+            bean.put("faceURL", userInfo.getFaceURL());
+            ARouter.getInstance()
+                .build(Routes.Contact.ALL_FRIEND).withString("recommend", GsonHel.toJson(bean))
+                .navigation();
+        });
         view.moreData.setOnClickListener(v -> {
             startActivity(new Intent(this, MoreDataActivity.class));
         });
         view.remark.setOnClickListener(view -> {
-            if (null == vm.userInfo.getValue()) return;
+            if (null == vm.exUserInfo.getValue()) return;
+            String remark = "";
+            try {
+                remark = vm.exUserInfo.getValue().userInfo.getFriendInfo().getRemark();
+            } catch (Exception e){}
             resultLauncher.launch(new Intent(this, EditTextActivity.class)
                 .putExtra(EditTextActivity.TITLE, getString(io.openim.android.ouicore.R.string.remark))
-                .putExtra(EditTextActivity.INIT_TXT, vm.userInfo.getValue().getRemark()));
+                .putExtra(EditTextActivity.INIT_TXT, remark));
         });
         friendVM.blackListUser.observe(this, userInfos -> {
             boolean isCon = false;
             for (UserInfo userInfo : userInfos) {
                 if (userInfo.getUserID()
-                    .equals(chatVM.otherSideID)) {
+                    .equals(uid)) {
                     isCon = true;
                     break;
                 }
             }
-            view.slideButton.setChecked(isCon);
+            boolean finalIsCon = isCon;
+            view.slideButton.post(() -> view.slideButton.setCheckedWithAnimation(finalIsCon));
         });
         view.joinBlackList.setOnClickListener(v -> {
             if (view.slideButton.isChecked())
-                friendVM.removeBlacklist(chatVM.otherSideID);
+                friendVM.removeBlacklist(uid);
             else {
                 addBlackList();
             }
@@ -97,7 +144,7 @@ public class PersonDataActivity extends BaseActivity<PersonalVM, ActivityPersonI
             if (isChecked)
                 addBlackList();
             else
-                friendVM.removeBlacklist(chatVM.otherSideID);
+                friendVM.removeBlacklist(uid);
         });
     }
 
@@ -105,14 +152,14 @@ public class PersonDataActivity extends BaseActivity<PersonalVM, ActivityPersonI
         CommonDialog commonDialog = new CommonDialog(this);
         commonDialog.setCanceledOnTouchOutside(false);
         commonDialog.setCancelable(false);
-        commonDialog.getMainView().tips.setText("确认对" + vm.userInfo.getValue().getNickname() + "拉黑吗？");
+        commonDialog.getMainView().tips.setText("确认对" + vm.exUserInfo.getValue().userInfo.getNickname() + "拉黑吗？");
         commonDialog.getMainView().cancel.setOnClickListener(v -> {
             commonDialog.dismiss();
             friendVM.blackListUser.setValue(friendVM.blackListUser.getValue());
         });
         commonDialog.getMainView().confirm.setOnClickListener(v -> {
             commonDialog.dismiss();
-            friendVM.addBlacklist(chatVM.otherSideID);
+            friendVM.addBlacklist(uid);
         });
         commonDialog.show();
     }
@@ -132,8 +179,9 @@ public class PersonDataActivity extends BaseActivity<PersonalVM, ActivityPersonI
             @Override
             public void onSuccess(String data) {
                 waitDialog.dismiss();
-                vm.userInfo.getValue().setRemark(resultStr);
+                vm.exUserInfo.getValue().userInfo.setRemark(resultStr);
+                Obs.newMessage(Constant.Event.USER_INFO_UPDATA);
             }
-        }, chatVM.otherSideID, resultStr);
+        }, uid, resultStr);
     });
 }

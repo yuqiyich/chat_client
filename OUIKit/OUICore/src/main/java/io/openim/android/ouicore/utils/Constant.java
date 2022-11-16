@@ -1,36 +1,63 @@
 package io.openim.android.ouicore.utils;
 
+import android.text.TextUtils;
+
+import io.openim.android.ouicore.base.BaseApp;
 import io.openim.android.ouicore.im.IM;
 
 public class Constant {
-    public static final String DEFAULT_IP = "121.37.25.71";
-//    public static final String DEFAULT_IP = "43.128.5.63";
+    /**
+     * 将此处改为自己服务器IP/域名
+     */
+    //    private static final String DEFAULT_IP = "test-web.rentsoft.cn";//43
+    public static final String DEFAULT_IP = "web.rentsoft.cn";//121
 
-    //IM sdk api地址
-    public static final String IM_API_URL = "http://" + DEFAULT_IP + ":10002";
     //登录注册手机验 证服务器地址
-    public static final String APP_AUTH_URL = "http://" + DEFAULT_IP + ":10004";
+    private static final String APP_AUTH_URL = "https://" + DEFAULT_IP + "/chat/";
+    //IM sdk api地址
+    private static final String IM_API_URL = "https://" + DEFAULT_IP + "/api/";
     //web socket
-    public static final String IM_WS_URL = "ws://" + DEFAULT_IP + ":10001";
+    private static final String IM_WS_URL = "wss://" + DEFAULT_IP + "/msg_gateway";
 
 
-//    public static final String DEFAULT_IP = "139.9.112.88";
-//
-//    //IM sdk api地址
-//    public static final String IM_API_URL = "http://" + DEFAULT_IP + ":11009";
-//    //登录注册手机验 证服务器地址
-//    public static final String APP_AUTH_URL = "http://" + DEFAULT_IP + ":11009";
-//    //    public static final String APP_AUTH_URL = "http://" + DEFAULT_IP + ":3010";
-////web socket
-//    public static final String IM_WS_URL = "ws://" + DEFAULT_IP + ":11008";
+    public static String getImApiUrl() {
+        String url = SharedPreferencesUtil.get(BaseApp.inst())
+            .getString("IM_API_URL");
+        if (TextUtils.isEmpty(url))
+            return IM_API_URL;
+        return url;
+    }
 
+    public static String getAppAuthUrl() {
+        String url = SharedPreferencesUtil.get(BaseApp.inst())
+            .getString("APP_AUTH_URL");
+        if (TextUtils.isEmpty(url))
+            return APP_AUTH_URL;
+        return url;
+    }
+
+    public static String getImWsUrl() {
+        String url = SharedPreferencesUtil.get(BaseApp.inst())
+            .getString("IM_WS_URL");
+        if (TextUtils.isEmpty(url))
+            return IM_WS_URL;
+        return url;
+    }
+
+    public static String getStorageType() {
+        String url = SharedPreferencesUtil.get(BaseApp.inst())
+            .getString("STORAGE_TYPE");
+        if (TextUtils.isEmpty(url))
+            return "minio";
+        return url;
+    }
 
     //存储音频的文件夹
-    public static final String AUDIODIR = IM.getStorageDir() + "/audio/";
+    public static final String AUDIO_DIR = IM.getStorageDir() + "/audio/";
     //视频存储文件夹
-    public static final String VIDEODIR = IM.getStorageDir() + "/video/";
+    public static final String VIDEO_DIR = IM.getStorageDir() + "/video/";
     //图片存储文件夹
-    public static final String PICTUREDIR = IM.getStorageDir() + "/picture/";
+    public static final String PICTURE_DIR = IM.getStorageDir() + "/picture/";
 
     //二维码
     public static class QR {
@@ -40,8 +67,8 @@ public class Constant {
 
 
     public static class Event {
-        //已读数量变化
-        public static final int READ_CHANGE = 10001;
+        //会话列表初始
+        public static final int CONTACT_LIST_VM_INIT = 10001;
         //转发选人
         public static final int FORWARD = 10002;
         //音视频通话
@@ -50,11 +77,16 @@ public class Constant {
         public static final int USER_INFO_UPDATA = 10004;
         //设置背景
         public static final int SET_BACKGROUND = 10005;
+        //群信息更新
+        public static final int UPDATA_GROUP_INFO = 10006;
+        //设置群通知
+        public static final int SET_GROUP_NOTIFICATION = 10007;
     }
 
     //会话类型
     public static class SessionType {
         public static final int SINGLE_CHAT = 1;
+
         public static final int GROUP_CHAT = 2;
         /// 大群
         public static final int SUPER_GROUP = 3;
@@ -81,6 +113,8 @@ public class Constant {
     public static class Send_State {
         //发送中...
         public static final int SENDING = 1;
+        //发送成功
+        public static final int SEND_SUCCESS = 2;
         //发送失败
         public static final int SEND_FAILED = 3;
     }
@@ -104,8 +138,8 @@ public class Constant {
         public static final int MENTION = 106;
         //            * 107:合并消息<br/>
         public static final int MERGE = 107;
-        //            * 108:转发消息<br/>
-        public static final int TRANSIT = 108;
+        //            * 108:名片消息<br/>
+        public static final int CARD = 108;
         //            * 109:位置消息<br/>
         public static final int LOCATION = 109;
         //            * 110:自定义消息<br/>
@@ -118,8 +152,12 @@ public class Constant {
         public static final int ALREADY_READ = 112;
         //            * 113:正在输入状态
         public static final int TYPING = 113;
+        /// 引用回复
+        public static final int QUOTE = 114;
         //通知消息一般大于1200
         public static final int NOTICE = 1200;
+        //后台发送过来的通知
+        public static final int OA_NOTICE = 1400;
         //群公告
         public static final int BULLETIN = 1502;
     }
@@ -143,6 +181,14 @@ public class Constant {
         public static final int groupNotification = 4;
     }
 
+    /**
+     * 群身份
+     */
+    public static class RoleLevel {
+        public static final int MEMBER = 1;
+        public static final int GROUP_OWNER = 2;
+        public static final int ADMINISTRATOR = 3;
+    }
 
     public static class MsgNotification {
         /// 好友已添加
@@ -196,9 +242,32 @@ public class Constant {
         public static final int groupCancelMutedNotification = 1515;
 
         /// 阅后即焚
-        public static final int  burnAfterReadingNotification = 1701;
+        public static final int burnAfterReadingNotification = 1701;
         /// 群成员信息改变
         public static final int groupMemberInfoChangedNotification = 1516;
+    }
+
+    public static class CacheKey {
+    }
+
+    public static class GroupStatus {
+        //        0正常，1被封，2解散，3禁言
+        public static final int status0 = 0;
+        public static final int status1 = 1;
+        public static final int status2 = 2;
+        public static final int status3 = 3;
+    }
+
+    /// 进群验证设置选项
+    public static class GroupVerification {
+        /// 申请需要同意 邀请直接进
+        public static final int applyNeedVerificationInviteDirectly = 0;
+
+        /// 所有人进群需要验证，除了群主管理员邀
+        public static final int allNeedVerification = 1;
+
+        /// 直接进群
+        public static final int directly = 2;
     }
 
 }

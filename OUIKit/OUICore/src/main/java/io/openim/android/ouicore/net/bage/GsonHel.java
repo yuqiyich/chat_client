@@ -1,5 +1,6 @@
 package io.openim.android.ouicore.net.bage;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -17,14 +18,18 @@ public class GsonHel {
     private static Gson mGson = null;
 
     private static synchronized GsonHel get() {
-            if (instance == null) {
-                instance = new GsonHel();
-            }
+        if (instance == null) {
+            instance = new GsonHel();
+        }
         return instance;
     }
 
     private GsonHel() {
         mGson = new GsonBuilder().serializeNulls().create();
+    }
+
+    public static Gson getGson() {
+        return mGson;
     }
 
     public static String toJson(Object object) {
@@ -48,7 +53,7 @@ public class GsonHel {
     public static <T> Base<T> dataObject(String jsonStr, Class<T> clazz) throws Exception {
         get();
         Type type = new ParameterizedTypeImpl(Base.class, new Class[]{clazz});
-        return mGson.fromJson(jsonStr, type);
+        return JSONObject.parseObject(jsonStr, type);
     }
 
     /**
@@ -65,16 +70,16 @@ public class GsonHel {
         Type listType = new ParameterizedTypeImpl(List.class, new Class[]{clazz});
         // 根据List<T>生成的，再生出完整的Base<List<T>>
         Type type = new ParameterizedTypeImpl(Base.class, new Type[]{listType});
-        return mGson.fromJson(jsonStr, type);
+        return JSONObject.parseObject(jsonStr, type);
     }
 
 
-    private static class ParameterizedTypeImpl implements ParameterizedType {
+    public static class ParameterizedTypeImpl implements ParameterizedType {
 
         private final Class raw;
         private final Type[] args;
 
-        ParameterizedTypeImpl(Class raw, Type[] args) {
+        public ParameterizedTypeImpl(Class raw, Type[] args) {
             this.raw = raw;
             this.args = args != null ? args : new Type[0];
         }

@@ -1,12 +1,9 @@
 package io.openim.android.demo.vm;
 
-import android.content.Context;
-import android.os.Build;
-
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import io.openim.android.ouicore.base.BaseViewModel;
@@ -49,8 +46,10 @@ public class FriendVM extends BaseViewModel {
             @Override
             public void onSuccess(String data) {
                 waitDialog.dismiss();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    blackListUser.getValue().removeIf(v -> v.getUserID() == uid);
+                Iterator<UserInfo> iterator = blackListUser.getValue().iterator();
+                while (iterator.hasNext()) {
+                    if (((UserInfo) iterator.next()).getUserID().equals(uid))
+                        iterator.remove();
                 }
                 blackListUser.setValue(blackListUser.getValue());
             }
@@ -90,5 +89,25 @@ public class FriendVM extends BaseViewModel {
                 blackListUser.setValue(null == data ? new ArrayList<>() : data);
             }
         });
+    }
+
+    /**
+     * 移除好友
+     *
+     * @param uid
+     */
+    public void deleteFriend(String uid) {
+        OpenIMClient.getInstance().friendshipManager.deleteFriend(new OnBase<String>() {
+            @Override
+            public void onError(int code, String error) {
+                IView.toast(error);
+            }
+
+            @Override
+            public void onSuccess(String data) {
+                IView.toast(getContext().getString(io.openim.android.ouicore.R.string.delete_friend));
+                IView.onSuccess(data);
+            }
+        }, uid);
     }
 }

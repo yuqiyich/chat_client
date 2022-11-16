@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -85,19 +86,25 @@ public class IMUtil {
      * @return
      */
     public static List<Message> calChatTimeInterval(List<Message> list) {
-        Message first = list.get(0);
-        long lastShowTimeStamp = first.getSendTime();
-        for (int i = 1; i < list.size(); i++) {
+        long lastShowTimeStamp = 0;
+        for (int i = list.size() - 1; i >= 0; i--) {
             Message message = list.get(i);
-            if (lastShowTimeStamp - message.getSendTime() > (1000 * 60 * 5)) {
+            MsgExpand msgExpand = (MsgExpand) message.getExt();
+            if (null == msgExpand)
+                msgExpand = new MsgExpand();
+            //重置
+            msgExpand.isShowTime = false;
+            if (message.getContentType() >= Constant.MsgType.NOTICE
+                || message.getContentType() == Constant.MsgType.REVOKE
+                || message.getContentType() == Constant.MsgType.ADVANCED_REVOKE)
+                continue;
+
+            if (lastShowTimeStamp == 0 ||
+                (message.getSendTime() - lastShowTimeStamp > (1000 * 60 * 5))) {
                 lastShowTimeStamp = message.getSendTime();
-                MsgExpand msgExpand = (MsgExpand) message.getExt();
-                if (null == msgExpand) {
-                    msgExpand = new MsgExpand();
-                    message.setExt(msgExpand);
-                }
                 msgExpand.isShowTime = true;
             }
+            message.setExt(msgExpand);
         }
         return list;
     }
@@ -275,12 +282,17 @@ public class IMUtil {
     }
 
     private static void handleEmoji(MsgExpand expand, Message msg) {
-        String content = msg.getContent();
+        String content = msg.getContentType() == Constant.MsgType.QUOTE ?
+            msg.getQuoteElem().getText() : msg.getContent();
+        if (TextUtils.isEmpty(content)) return;
         for (String key : EmojiUtil.emojiFaces.keySet()) {
             int fromIndex = 0;
             if (content.contains(key)) {
                 if (null == expand.sequence) {
                     expand.sequence = new SpannableStringBuilder(content);
+                } else {
+                    //已经处理了@消息
+                    content = expand.sequence.toString();
                 }
                 while ((fromIndex = content.indexOf(key, fromIndex)) > -1) {
                     int emojiId = Common.getMipmapId(EmojiUtil.emojiFaces.get(key));
@@ -295,15 +307,20 @@ public class IMUtil {
         }
     }
 
+    private static String atSelf(AtUsersInfo atUsersInfo) {
+        return "@" + (atUsersInfo.atUserID.equals(BaseApp.inst().loginCertificate.userID) ?
+            BaseApp.inst().getString(R.string.you) : atUsersInfo.groupNickname);
+    }
+
     private static void handleAt(MsgExpand msgExpand) {
         if (null == msgExpand.atMsgInfo) return;
         String atTxt = msgExpand.atMsgInfo.text;
         for (AtUsersInfo atUsersInfo : msgExpand.atMsgInfo.atUsersInfo) {
-            atTxt = atTxt.replace("@" + atUsersInfo.atUserID, "@" + atUsersInfo.groupNickname);
+            atTxt = atTxt.replace("@" + atUsersInfo.atUserID, atSelf(atUsersInfo));
         }
         SpannableStringBuilder spannableString = new SpannableStringBuilder(atTxt);
         for (AtUsersInfo atUsersInfo : msgExpand.atMsgInfo.atUsersInfo) {
-            String tag = "@" + atUsersInfo.groupNickname;
+            String tag = atSelf(atUsersInfo);
             ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#009ad6"));
             ClickableSpan clickableSpan = new ClickableSpan() {
                 @Override
@@ -330,39 +347,52 @@ public class IMUtil {
      */
     public static String getMsgParse(Message msg) {
         String lastMsg = "";
-        switch (msg.getContentType()) {
-            default:
-                lastMsg = msg.getNotificationElem().getDefaultTips();
-                break;
-            case Constant.MsgType.TXT:
-                lastMsg = msg.getContent();
-                break;
-            case Constant.MsgType.PICTURE:
-                lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.picture) + "]";
-                break;
-            case Constant.MsgType.VOICE:
-                lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.voice) + "]";
-                break;
-            case Constant.MsgType.VIDEO:
-                lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.video) + "]";
-                break;
-            case Constant.MsgType.FILE:
-                lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.file) + "]";
-                break;
-            case Constant.MsgType.LOCATION:
-                lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.location) + "]";
-                break;
-            case Constant.MsgType.MENTION:
-                MsgExpand msgExpand = (MsgExpand) msg.getExt();
-                String atTxt = msgExpand.atMsgInfo.text;
-                for (AtUsersInfo atUsersInfo : msgExpand.atMsgInfo.atUsersInfo) {
-                    atTxt = atTxt.replace("@" + atUsersInfo.atUserID, "@" + atUsersInfo.groupNickname);
-                }
-                lastMsg = atTxt;
-                break;
-            case Constant.MsgType.MERGE:
-                lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.chat_history2) + "]";
-                break;
+        try {
+            switch (msg.getContentType()) {
+                default:
+                    lastMsg = msg.getNotificationElem().getDefaultTips();
+                    break;
+                case Constant.MsgType.TXT:
+                    lastMsg = msg.getContent();
+                    break;
+                case Constant.MsgType.PICTURE:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.picture) + "]";
+                    break;
+                case Constant.MsgType.VOICE:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.voice) + "]";
+                    break;
+                case Constant.MsgType.VIDEO:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.video) + "]";
+                    break;
+                case Constant.MsgType.FILE:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.file) + "]";
+                    break;
+                case Constant.MsgType.LOCATION:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.location) + "]";
+                    break;
+                case Constant.MsgType.MENTION:
+                    MsgExpand msgExpand = (MsgExpand) msg.getExt();
+                    String atTxt = msgExpand.atMsgInfo.text;
+                    for (AtUsersInfo atUsersInfo : msgExpand.atMsgInfo.atUsersInfo) {
+                        atTxt = atTxt.replace("@" + atUsersInfo.atUserID, atSelf(atUsersInfo));
+                    }
+                    lastMsg = atTxt;
+                    break;
+                case Constant.MsgType.MERGE:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.chat_history2) + "]";
+                    break;
+                case Constant.MsgType.CARD:
+                    lastMsg = "[" + BaseApp.inst().getString(io.openim.android.ouicore.R.string.card) + "]";
+                    break;
+                case Constant.MsgType.OA_NOTICE:
+                    lastMsg = ((MsgExpand) msg.getExt()).oaNotification.text;
+                    break;
+                case Constant.MsgType.QUOTE:
+                    lastMsg = msg.getQuoteElem().getText();
+                    break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return lastMsg;
     }
@@ -421,9 +451,9 @@ public class IMUtil {
      *
      * @return
      */
-    public static boolean isLogged() {
+    public static boolean isLogged(String tag) {
         long status = OpenIMClient.getInstance().getLoginStatus();
-        L.e(TAG, "login status-----[" + status + "]");
+        L.e(tag, "login status-----[" + status + "]");
         return status == 101 || status == 102;
     }
 
@@ -436,6 +466,7 @@ public class IMUtil {
     public static void logout(AppCompatActivity from, Class<?> to) {
         from.startActivity(new Intent(from, to));
         LoginCertificate.clear();
+        BaseApp.inst().loginCertificate = null;
         CallingService callingService = (CallingService) ARouter.getInstance()
             .build(Routes.Service.CALLING).navigation();
         if (null != callingService)

@@ -34,7 +34,7 @@ public class ShootActivity extends BaseActivity<ChatVM, ActivityShootBinding> {
         bindViewDataBinding(ActivityShootBinding.inflate(getLayoutInflater()));
         Common.setFullScreen(this);
 
-        view.cameraView.setSaveVideoPath(Constant.VIDEODIR);
+        view.cameraView.setSaveVideoPath(Constant.VIDEO_DIR);
 
         view.cameraView.setErrorLisenter(new ErrorListener() {
             @Override
@@ -68,10 +68,10 @@ public class ShootActivity extends BaseActivity<ChatVM, ActivityShootBinding> {
     private String saveToFile(Bitmap bitmap) {
         try {
             String fName = UUID.randomUUID().toString();
-            File dir = new File(Constant.PICTUREDIR);
+            File dir = new File(Constant.PICTURE_DIR);
             if (!dir.exists())
                 dir.mkdirs();
-            File file = new File(Constant.PICTUREDIR + fName + ".jpg");
+            File file = new File(Constant.PICTURE_DIR + fName + ".jpg");
             file.createNewFile();
             FileOutputStream out = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);

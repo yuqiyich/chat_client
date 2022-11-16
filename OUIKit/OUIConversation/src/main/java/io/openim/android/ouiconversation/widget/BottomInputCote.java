@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.view.MotionEvent;
@@ -206,7 +207,9 @@ public class BottomInputCote {
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             view.chatInput.append(spannableString);
         });
-
+        vm.inputMsg.observe((LifecycleOwner) context, s -> {
+            view.chatSend.setEnabled(!TextUtils.isEmpty(s) && !Common.isBlank(s));
+        });
     }
 
     //设置扩展菜单隐藏

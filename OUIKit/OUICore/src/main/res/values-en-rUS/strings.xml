@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">OpenIM</string>
     <string name="group_bulletin">群公告</string>
     <string name="search_by_id">通过用户ID号搜索添加</string>
     <string name="send_succ">发送成功</string>
@@ -160,4 +161,46 @@
     <string name="pc">电脑</string>
     <string name="Web">Web</string>
     <string name="webMiniOnline">小程序</string>
+    <string name="synthesis">综合</string>
+    <string name="group">群组</string>
+    <string name="contact">联系人</string>
+    <string name="two_related_chats">%1$s条相关聊天记录</string>
+    <string name="say_more">查看更多</string>
+    <string name="sender">发送者</string>
+    <string name="kicked_offline_tips">账号已在其他地方登录，当前设备被踢下线</string>
+    <string name="token_expired">登录票据已经过期,请重新登录！</string>
+    <string name="repeat_group_manager">你已经是群主了</string>
+    <string name="transfer_permission">确定将群主转让给：%1$s?</string>
+    <string name="transfer_succ">转让成功</string>
+    <string name="msg_notification">消息通知</string>
+    <string name="a_message_is_received">您收到一条消息</string>
+    <string name="administrator">管理员</string>
+    <string name="about_us">关于我们</string>
+    <string name="check_the_new">检查新版本</string>
+    <string name="reply">回复</string>
+    <string name="total_silence">全员禁员</string>
+    <string name="join_validation">进群验证</string>
+    <string name="needVerification">需要发送验证信息</string>
+    <string name="allowAnyoneJoinGroup">允许任何人加群</string>
+    <string name="inviteNotVerification">群成员邀请无需验证</string>
+    <string name="memberPermissions">群成员权限</string>
+    <string name="notViewMemberProfiles">不允许查看其他群成员资料</string>
+    <string name="notAddMemberToFriend">不允许添加群成员为好友</string>
+    <string name="super_group">工作群</string>
+    <string name="ordinary_group">普通群</string>
+    <string name="group_type">群类型</string>
+    <string name="copy">复制</string>
+    <string name="recommend_to_friend">把他推荐给朋友</string>
+    <string name="recommend_who">确定推荐给%1$s吗？</string>
+    <string name="send_card_confirm">确定将该名片发送到本聊天？</string>
+    <string name="bulletin_edit_tips">只有群主或管理员可以编辑</string>
+    <string name="mark_read">标记已读</string>
+    <string name="start_download">开始下载</string>
+    <string name="save_succ">保存成功</string>
+    <string name="save_failure">保存失败</string>
+    <string name="search_friends">搜索好友</string>
+    <string name="group_nickName">群昵称</string>
+    <string name="join_group_time">入群时间</string>
+    <string name="you">你</string>
+    <string name="server_config">服务器配置</string>
 </resources>

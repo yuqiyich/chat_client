@@ -11,7 +11,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 
+
 import io.openim.android.ouicore.R;
+import io.openim.android.ouicore.utils.Common;
 
 public class AvatarImage extends RoundImageView {
     public AvatarImage(@NonNull Context context) {
@@ -32,14 +34,19 @@ public class AvatarImage extends RoundImageView {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     public void load(Object url, boolean isGroup) {
-        if (null == url || (url instanceof String && (String.valueOf(url).isEmpty() || String.valueOf(url).contains("ic_avatar")))) {
-            setImageDrawable(getContext().getDrawable(isGroup ? R.mipmap.ic_my_group : io.openim.android.ouicore.R.mipmap.ic_my_friend));
+        int resId=isGroup ? R.mipmap.ic_my_group : io.openim.android.ouicore.R.mipmap.ic_my_friend;
+        if (null == url || (url instanceof String && (String.valueOf(url).isEmpty()
+            || String.valueOf(url).contains("ic_avatar")))) {
+            setImageDrawable(getContext().getDrawable(resId));
         } else {
             setScaleType(ScaleType.CENTER);
             Glide.with(getContext())
                 .load(url)
                 .centerCrop()
-                .apply(RequestOptions.bitmapTransform(new RoundedCorners(10))).into(this);
+                .placeholder(resId)
+                .error(resId)
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(10)))
+                .into(this);
         }
     }
 }

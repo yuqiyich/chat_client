@@ -129,7 +129,10 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
             .add("operationID", System.currentTimeMillis() + "");
 
         N.API(OneselfService.class)
-            .getUsersOnlineStatus(BaseApp.inst().loginCertificate.token, parameter.buildJsonBody())
+            .getUsersOnlineStatus(
+                Constant.getImApiUrl() + "/user/get_users_online_status",
+                BaseApp.inst().loginCertificate.imToken,
+                parameter.buildJsonBody())
             .compose(N.IOMain())
             .subscribe(new NetObserver<ResponseBody>(getContext()) {
 
