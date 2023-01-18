@@ -59,6 +59,7 @@ import io.openim.android.sdk.listener.OnMsgSendCallback;
 import io.openim.android.sdk.models.AdvancedMessage;
 import io.openim.android.sdk.models.ConversationInfo;
 import io.openim.android.sdk.models.GroupInfo;
+import io.openim.android.sdk.models.KeyValue;
 import io.openim.android.sdk.models.Message;
 import io.openim.android.sdk.models.NotDisturbInfo;
 import io.openim.android.sdk.models.OfflinePushInfo;
@@ -467,6 +468,16 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
 
     @Override
     public void onRecvMessageRevokedV2(RevokedInfo info) {
+
+    }
+
+    @Override
+    public void onRecvMessageExtensionsChanged(String msgID, List<KeyValue> list) {
+
+    }
+
+    @Override
+    public void onRecvMessageExtensionsDeleted(String msgID, List<String> list) {
 
     }
 

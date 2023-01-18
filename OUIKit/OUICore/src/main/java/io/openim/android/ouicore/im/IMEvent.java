@@ -21,11 +21,13 @@ import io.openim.android.sdk.listener.OnSignalingListener;
 import io.openim.android.sdk.listener.OnUserListener;
 import io.openim.android.sdk.models.BlacklistInfo;
 import io.openim.android.sdk.models.ConversationInfo;
+import io.openim.android.sdk.models.CustomSignalingInfo;
 import io.openim.android.sdk.models.FriendApplicationInfo;
 import io.openim.android.sdk.models.FriendInfo;
 import io.openim.android.sdk.models.GroupApplicationInfo;
 import io.openim.android.sdk.models.GroupInfo;
 import io.openim.android.sdk.models.GroupMembersInfo;
+import io.openim.android.sdk.models.KeyValue;
 import io.openim.android.sdk.models.MeetingStreamEvent;
 import io.openim.android.sdk.models.Message;
 import io.openim.android.sdk.models.ReadReceiptInfo;
@@ -112,6 +114,11 @@ public class IMEvent {
 
             @Override
             public void onMeetingStreamChanged(MeetingStreamEvent e) {
+
+            }
+
+            @Override
+            public void onReceiveCustomSignal(CustomSignalingInfo s) {
 
             }
         });
@@ -432,6 +439,16 @@ public class IMEvent {
 
             @Override
             public void onRecvMessageRevokedV2(RevokedInfo info) {
+
+            }
+
+            @Override
+            public void onRecvMessageExtensionsChanged(String msgID, List<KeyValue> list) {
+
+            }
+
+            @Override
+            public void onRecvMessageExtensionsDeleted(String msgID, List<String> list) {
 
             }
 
