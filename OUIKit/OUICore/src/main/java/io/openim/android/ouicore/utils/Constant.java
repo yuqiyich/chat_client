@@ -10,10 +10,11 @@ public class Constant {
      * 将此处改为自己服务器IP/域名
      */
     //    private static final String DEFAULT_IP = "test-web.rentsoft.cn";//43
-    public static final String DEFAULT_IP = "web.rentsoft.cn";//121
+//    public static final String DEFAULT_IP = "web.rentsoft.cn";//121
+    public static final String DEFAULT_IP = "http://10.3.1.3:10008";//目前暂时的服务器
 
     //登录注册手机验 证服务器地址
-    private static final String APP_AUTH_URL = "https://" + DEFAULT_IP + "/chat/";
+    private static final String APP_AUTH_URL = "https://" + DEFAULT_IP ;
     //IM sdk api地址
     private static final String IM_API_URL = "https://" + DEFAULT_IP + "/api/";
     //web socket

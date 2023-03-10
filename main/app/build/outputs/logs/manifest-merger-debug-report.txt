@@ -1,0 +1,879 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+MERGED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-51:12
+MERGED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-35:12
+MERGED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-36:12
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-33:12
+MERGED from [com.github.Wynsbin:VerificationCodeInputView:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/97e8ba7db47352089206fc6b75b3681f/transformed/jetified-VerificationCodeInputView-1.0.2/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.databinding:databinding-adapters:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/db879c3a71d14d8684945175695494f7/transformed/databinding-adapters-7.1.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-ktx:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/852ab7fe9c72e62f18a7c5da4f412115/transformed/jetified-databinding-ktx-7.1.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-runtime:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/852c14571940e5e470c7983ab23eb9a8/transformed/databinding-runtime-7.1.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:viewbinding:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/3f4484da25a19761ef1129d114020dc8/transformed/jetified-viewbinding-7.1.3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.4.0] /Users/qiyu/.gradle/caches/transforms-3/99e32d68514b66924007c6f8831ec737/transformed/material-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/qiyu/.gradle/caches/transforms-3/b6917a7205be29174e214e1fc1c926a1/transformed/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:17:1-36:12
+MERGED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:17:1-61:12
+MERGED from [com.github.lihangleo2:ShadowLayout:2.0.1] /Users/qiyu/.gradle/caches/transforms-3/f2b9f375ce7e80fbbcbf05873dcb2ba4/transformed/jetified-ShadowLayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.maogedadada:SortLetter-Master:1.0.9] /Users/qiyu/.gradle/caches/transforms-3/689370a4ed02e7e4f54de9326bad4bf0/transformed/jetified-SortLetter-Master-1.0.9/AndroidManifest.xml:2:1-11:12
+MERGED from [com.lqr.audio:library:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e908cf203d92c7768726745693c20b82/transformed/jetified-library-1.0.0/AndroidManifest.xml:2:1-17:12
+MERGED from [com.airbnb.android:lottie:5.0.3] /Users/qiyu/.gradle/caches/transforms-3/dc08cc60737d0bf848f567f404ca780d/transformed/jetified-lottie-5.0.3/AndroidManifest.xml:2:1-11:12
+MERGED from [cjt.library.wheel:camera:1.1.9] /Users/qiyu/.gradle/caches/transforms-3/67ad2368aa85a0cd780c132b9d095aba/transformed/jetified-camera-1.1.9/AndroidManifest.xml:2:1-17:12
+MERGED from [com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0] /Users/qiyu/.gradle/caches/transforms-3/27495bd1d33dfa3cbf11a0029c554329/transformed/jetified-subsampling-scale-image-view-androidx-3.10.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.3.1] /Users/qiyu/.gradle/caches/transforms-3/a36dd48c06c97a310711e98f6df70921/transformed/appcompat-1.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.alibaba:arouter-api:1.5.2] /Users/qiyu/.gradle/caches/transforms-3/444ccc4b633edf55eebcf47dbb796c7b/transformed/jetified-arouter-api-1.5.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/3ded8084c33e2c23458468282ee33820/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/a7b5b52346fb9ad2cfa45dece98c5bef/transformed/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/07c5dc88eea34483afecf3e2aaa42331/transformed/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.multidex:multidex:2.0.1] /Users/qiyu/.gradle/caches/transforms-3/69758ff56b647e2485be5aee381abb02/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [io.realm:realm-android-library:10.11.1] /Users/qiyu/.gradle/caches/transforms-3/c30ed9b6f9036c786ef16efa3d42833f/transformed/jetified-realm-android-library-10.11.1/AndroidManifest.xml:2:1-9:12
+MERGED from [io.realm:realm-android-kotlin-extensions:10.11.1] /Users/qiyu/.gradle/caches/transforms-3/d7f0d63a5c78a392062c9da30601dd8b/transformed/jetified-realm-android-kotlin-extensions-10.11.1/AndroidManifest.xml:2:1-9:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/qiyu/.gradle/caches/transforms-3/b4d5852169918039b344ba1a87dabd91/transformed/jetified-rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [com.wang.avi:library:2.1.3] /Users/qiyu/.gradle/caches/transforms-3/1792ef69139bd1170c28758163e8b86c/transformed/jetified-library-2.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:glide:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/967fdd864bc544d3d340f69daaa16ea3/transformed/jetified-glide-4.13.0/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/a93678183e6c365146d395be2e01e8e6/transformed/jetified-tinypinyin-lexicons-android-cncity-2.0.3/AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.promeg:tinypinyin-android-asset-lexicons:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/d5d05f4ccedc43dfb1810a1cddd17646/transformed/jetified-tinypinyin-android-asset-lexicons-2.0.3/AndroidManifest.xml:2:1-14:12
+MERGED from [com.yanzhenjie.recyclerview:x:1.3.2] /Users/qiyu/.gradle/caches/transforms-3/cf8ad75dd2882fddd081054b0233eda3/transformed/jetified-x-1.3.2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:2:1-29:12
+MERGED from [io.openim:android-sdk:2.3.5.1] /Users/qiyu/.gradle/caches/transforms-3/55ca5313ab7b64e3d652c0982f9bb7dd/transformed/jetified-android-sdk-2.3.5.1/AndroidManifest.xml:2:1-9:12
+MERGED from [io.openim:core-sdk:2.3.5-t08] /Users/qiyu/.gradle/caches/transforms-3/7edfd79d191638cac817b39c0b9746a9/transformed/jetified-core-sdk-2.3.5-t08/AndroidManifest.xml:1:1-2:50
+MERGED from [com.contrarywind:Android-PickerView:4.1.9] /Users/qiyu/.gradle/caches/transforms-3/0dcf11a09cae36fb3307eeaa3bb6ad4e/transformed/jetified-Android-PickerView-4.1.9/AndroidManifest.xml:2:1-11:12
+MERGED from [cn.jzvd:jiaozivideoplayer:7.7.0] /Users/qiyu/.gradle/caches/transforms-3/6f1e406f7d80587e05eff0a14dce2714/transformed/jetified-jiaozivideoplayer-7.7.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/52328c5ec3f1a203e216afff6390c2bf/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/6a049f4b12370ad96cb74fbc2bc2f488/transformed/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/20c32dc5fd26e7647ca097efe7237d10/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ccba6194253aa21aa4b310ec7254d1c8/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/89adc86841fd50b6d08ad187d22c4518/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/a61c7e39abf4e14fc685e0e4f3e0f7fa/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/9e0a7999723b59d0e40ead74b3a29142/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/072d5a6eeab6ab112d37e499b7296440/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/04d8754f0a3f7408464d67928b9cbf0a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/qiyu/.gradle/caches/transforms-3/c2cdf70b2381a55946e2740863061324/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/4343ec824c08c2966a9406892b6a626e/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.2.4] /Users/qiyu/.gradle/caches/transforms-3/b899862a50f31f823593556ebcbe5cfd/transformed/jetified-activity-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/06e8bace30637de97576ea8543cb2890/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/f500906a1d0751ea4c50c0b8851eb989/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ef94e3ef4ca9f55764fa5586b825a090/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/ee86915654152f207ccf9580bdf6b95d/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/qiyu/.gradle/caches/transforms-3/bdf5618230f2259e0ea302566dc1dc04/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] /Users/qiyu/.gradle/caches/transforms-3/ddc0131347d5c1a4d1abf600635fff3d/transformed/jetified-appcompat-resources-1.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/396c9c8a2ffcf6cba753b48760281057/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/d7e289626daefa178bff947263d531a6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e34bef134904c56951986487f46e80b9/transformed/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/5b92d4f8c1c94a312aba491f67beea50/transformed/jetified-gifdecoder-4.13.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Users/qiyu/.gradle/caches/transforms-3/62228e68c468896c0166e1f8ccb74ec1/transformed/exifinterface-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/8b21b758247cb44cd45277498a3b0ca4/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/f759950d90e3a16d0b1a0973759d3e3b/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.contrarywind:wheelview:4.1.0] /Users/qiyu/.gradle/caches/transforms-3/6b8ead8bee35e52102ea40858eb45f5d/transformed/jetified-wheelview-4.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/9c4886525d2e54c10c64357e2b69a5f6/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/4d0aaee9a14ddb43fe5d29e2645c6761/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7766235025ade5f40bbb310674ca18ea/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7f446b35e74fdd9763fc0f8b4bae7704/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ba1c530b26a1d6385717c94b12423000/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/c5f05fc77b17a1af9985facfd91a6b56/transformed/lifecycle-livedata-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:17:1-32:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/0fef175aab2390f82e570457b7e77b52/transformed/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/72964c1ef097633c7600dc76e6217bf7/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/6dec9d00163c54e242a7f04806cedc5e/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/edaaede9801b3039d9ddff8599943f0b/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/qiyu/.gradle/caches/transforms-3/8780e25e20ef364340f14a106133a6a9/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/9623c995d3a2bb450aa161dc8c99b49e/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/qiyu/.gradle/caches/transforms-3/f24cbb229c53b834cf80e9f99766296b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7b5bed327c8032e4dd5c553f2ed953dc/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/cf31bf7f2b034965a6318c2a82fbce0a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/61d04d6852bfe2409d41d486640b18ad/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/467894ff3a623af0fab5da1e4f7016e8/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/5ac27be94f4d3996fc1ca5b76225a99a/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [q.rorbin:badgeview:1.1.3] /Users/qiyu/.gradle/caches/transforms-3/5ad7cf7a4fbc970f0337dffa48cc5dee/transformed/jetified-badgeview-1.1.3/AndroidManifest.xml:2:1-13:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] /Users/qiyu/.gradle/caches/transforms-3/0932343301dc7c458ac3ef5efbfe6d3c/transformed/jetified-relinker-1.4.3/AndroidManifest.xml:2:1-7:12
+MERGED from [it.sephiroth.android.library.imagezoom:library:1.0.4] /Users/qiyu/.gradle/caches/transforms-3/342992ab31c8f2e0a83b9a5469c2ec2b/transformed/jetified-library-1.0.4/AndroidManifest.xml:1:106-7:12
+MERGED from [it.sephiroth.android.library.easing:library:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/8b834e00740f4c483b6efe9a97dd8967/transformed/jetified-library-1.0.2/AndroidManifest.xml:1:116-8:12
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+	package
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:3:5-37
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:1-84:12
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:5:5-82:19
+MERGED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-49:19
+MERGED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-49:19
+MERGED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-33:19
+MERGED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-33:19
+MERGED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-34:19
+MERGED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-34:19
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:5-31:19
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:5-31:19
+MERGED from [com.google.android.material:material:1.4.0] /Users/qiyu/.gradle/caches/transforms-3/99e32d68514b66924007c6f8831ec737/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] /Users/qiyu/.gradle/caches/transforms-3/99e32d68514b66924007c6f8831ec737/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/qiyu/.gradle/caches/transforms-3/b6917a7205be29174e214e1fc1c926a1/transformed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/qiyu/.gradle/caches/transforms-3/b6917a7205be29174e214e1fc1c926a1/transformed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:27:5-34:19
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:27:5-34:19
+MERGED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:31:5-59:19
+MERGED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:31:5-59:19
+MERGED from [com.lqr.audio:library:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e908cf203d92c7768726745693c20b82/transformed/jetified-library-1.0.0/AndroidManifest.xml:11:5-15:19
+MERGED from [com.lqr.audio:library:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e908cf203d92c7768726745693c20b82/transformed/jetified-library-1.0.0/AndroidManifest.xml:11:5-15:19
+MERGED from [com.airbnb.android:lottie:5.0.3] /Users/qiyu/.gradle/caches/transforms-3/dc08cc60737d0bf848f567f404ca780d/transformed/jetified-lottie-5.0.3/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.0.3] /Users/qiyu/.gradle/caches/transforms-3/dc08cc60737d0bf848f567f404ca780d/transformed/jetified-lottie-5.0.3/AndroidManifest.xml:9:5-20
+MERGED from [cjt.library.wheel:camera:1.1.9] /Users/qiyu/.gradle/caches/transforms-3/67ad2368aa85a0cd780c132b9d095aba/transformed/jetified-camera-1.1.9/AndroidManifest.xml:11:5-15:19
+MERGED from [cjt.library.wheel:camera:1.1.9] /Users/qiyu/.gradle/caches/transforms-3/67ad2368aa85a0cd780c132b9d095aba/transformed/jetified-camera-1.1.9/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.bumptech.glide:glide:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/967fdd864bc544d3d340f69daaa16ea3/transformed/jetified-glide-4.13.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/967fdd864bc544d3d340f69daaa16ea3/transformed/jetified-glide-4.13.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/a93678183e6c365146d395be2e01e8e6/transformed/jetified-tinypinyin-lexicons-android-cncity-2.0.3/AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/a93678183e6c365146d395be2e01e8e6/transformed/jetified-tinypinyin-lexicons-android-cncity-2.0.3/AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.promeg:tinypinyin-android-asset-lexicons:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/d5d05f4ccedc43dfb1810a1cddd17646/transformed/jetified-tinypinyin-android-asset-lexicons-2.0.3/AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.promeg:tinypinyin-android-asset-lexicons:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/d5d05f4ccedc43dfb1810a1cddd17646/transformed/jetified-tinypinyin-android-asset-lexicons-2.0.3/AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:20:5-27:19
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:20:5-27:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/a61c7e39abf4e14fc685e0e4f3e0f7fa/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/a61c7e39abf4e14fc685e0e4f3e0f7fa/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/5b92d4f8c1c94a312aba491f67beea50/transformed/jetified-gifdecoder-4.13.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/5b92d4f8c1c94a312aba491f67beea50/transformed/jetified-gifdecoder-4.13.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/qiyu/.gradle/caches/transforms-3/f24cbb229c53b834cf80e9f99766296b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/qiyu/.gradle/caches/transforms-3/f24cbb229c53b834cf80e9f99766296b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [q.rorbin:badgeview:1.1.3] /Users/qiyu/.gradle/caches/transforms-3/5ad7cf7a4fbc970f0337dffa48cc5dee/transformed/jetified-badgeview-1.1.3/AndroidManifest.xml:11:5-20
+MERGED from [q.rorbin:badgeview:1.1.3] /Users/qiyu/.gradle/caches/transforms-3/5ad7cf7a4fbc970f0337dffa48cc5dee/transformed/jetified-badgeview-1.1.3/AndroidManifest.xml:11:5-20
+MERGED from [it.sephiroth.android.library.imagezoom:library:1.0.4] /Users/qiyu/.gradle/caches/transforms-3/342992ab31c8f2e0a83b9a5469c2ec2b/transformed/jetified-library-1.0.4/AndroidManifest.xml:5:5-19
+MERGED from [it.sephiroth.android.library.imagezoom:library:1.0.4] /Users/qiyu/.gradle/caches/transforms-3/342992ab31c8f2e0a83b9a5469c2ec2b/transformed/jetified-library-1.0.4/AndroidManifest.xml:5:5-19
+MERGED from [it.sephiroth.android.library.easing:library:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/8b834e00740f4c483b6efe9a97dd8967/transformed/jetified-library-1.0.2/AndroidManifest.xml:5:5-6:19
+MERGED from [it.sephiroth.android.library.easing:library:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/8b834e00740f4c483b6efe9a97dd8967/transformed/jetified-library-1.0.2/AndroidManifest.xml:5:5-6:19
+	android:requestLegacyExternalStorage
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:10:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:9:9-41
+	android:icon
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:8:9-41
+	android:allowBackup
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:12:9-42
+	android:usesCleartextTraffic
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:13:9-44
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:6:9-40
+activity#io.openim.android.demo.ui.ServerConfigActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:14:9-16:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:16:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:15:13-52
+activity#io.openim.android.demo.ui.user.AboutUsActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:17:9-19:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:18:13-52
+activity#io.openim.android.demo.ui.main.CallHistoryActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:20:9-22:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:21:13-56
+activity#io.openim.android.demo.ui.user.MoreDataActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:23:9-25:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:24:13-53
+activity#io.openim.android.demo.ui.user.PersonDataActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:26:9-28:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:27:13-55
+activity#io.openim.android.demo.ui.main.EditTextActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:29:9-31:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:30:13-53
+activity#io.openim.android.demo.ui.user.PersonalInfoActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:33:13-57
+activity#io.openim.android.demo.ui.login.SupplementInfoActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:35:9-37:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:36:13-60
+activity#io.openim.android.demo.ui.login.VerificationCodeActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:38:9-40:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:39:13-62
+activity#io.openim.android.demo.ui.search.SendVerifyActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:41:9-43:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:42:13-57
+activity#io.openim.android.demo.ui.search.PersonDetailActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:44:9-46:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:45:13-59
+activity#io.openim.android.demo.ui.search.SearchConversActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:47:9-49:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:49:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:48:13-60
+activity#io.openim.android.demo.ui.search.AddConversActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:50:9-52:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:51:13-57
+activity#io.openim.android.demo.ui.login.RegisterActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:53:9-55:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:55:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:54:13-54
+activity#io.openim.android.demo.ui.login.LoginActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:56:9-58:40
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:58:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:57:13-51
+activity#io.openim.android.demo.SplashActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:59:9-68:20
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:61:13-36
+	android:theme
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:62:13-47
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:60:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:63:13-67:29
+action#android.intent.action.MAIN
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:64:17-69
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:64:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:66:17-77
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:66:27-74
+activity#io.openim.android.demo.ui.main.MainActivity
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:69:9-71:47
+	android:launchMode
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:71:13-44
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:70:13-49
+provider#androidx.core.content.FileProvider
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:73:9-81:20
+	android:grantUriPermissions
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:77:13-47
+	android:authorities
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:75:13-70
+	android:exported
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:76:13-37
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:74:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:78:13-80:54
+	android:resource
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:80:17-51
+	android:name
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:79:17-67
+uses-sdk
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+MERGED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.Wynsbin:VerificationCodeInputView:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/97e8ba7db47352089206fc6b75b3681f/transformed/jetified-VerificationCodeInputView-1.0.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Wynsbin:VerificationCodeInputView:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/97e8ba7db47352089206fc6b75b3681f/transformed/jetified-VerificationCodeInputView-1.0.2/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.databinding:databinding-adapters:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/db879c3a71d14d8684945175695494f7/transformed/databinding-adapters-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-adapters:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/db879c3a71d14d8684945175695494f7/transformed/databinding-adapters-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-ktx:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/852ab7fe9c72e62f18a7c5da4f412115/transformed/jetified-databinding-ktx-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-ktx:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/852ab7fe9c72e62f18a7c5da4f412115/transformed/jetified-databinding-ktx-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-runtime:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/852c14571940e5e470c7983ab23eb9a8/transformed/databinding-runtime-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-runtime:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/852c14571940e5e470c7983ab23eb9a8/transformed/databinding-runtime-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:viewbinding:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/3f4484da25a19761ef1129d114020dc8/transformed/jetified-viewbinding-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:viewbinding:7.1.3] /Users/qiyu/.gradle/caches/transforms-3/3f4484da25a19761ef1129d114020dc8/transformed/jetified-viewbinding-7.1.3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.4.0] /Users/qiyu/.gradle/caches/transforms-3/99e32d68514b66924007c6f8831ec737/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] /Users/qiyu/.gradle/caches/transforms-3/99e32d68514b66924007c6f8831ec737/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/qiyu/.gradle/caches/transforms-3/b6917a7205be29174e214e1fc1c926a1/transformed/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/qiyu/.gradle/caches/transforms-3/b6917a7205be29174e214e1fc1c926a1/transformed/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:20:5-22:41
+MERGED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.lihangleo2:ShadowLayout:2.0.1] /Users/qiyu/.gradle/caches/transforms-3/f2b9f375ce7e80fbbcbf05873dcb2ba4/transformed/jetified-ShadowLayout-2.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lihangleo2:ShadowLayout:2.0.1] /Users/qiyu/.gradle/caches/transforms-3/f2b9f375ce7e80fbbcbf05873dcb2ba4/transformed/jetified-ShadowLayout-2.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.maogedadada:SortLetter-Master:1.0.9] /Users/qiyu/.gradle/caches/transforms-3/689370a4ed02e7e4f54de9326bad4bf0/transformed/jetified-SortLetter-Master-1.0.9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.maogedadada:SortLetter-Master:1.0.9] /Users/qiyu/.gradle/caches/transforms-3/689370a4ed02e7e4f54de9326bad4bf0/transformed/jetified-SortLetter-Master-1.0.9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.lqr.audio:library:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e908cf203d92c7768726745693c20b82/transformed/jetified-library-1.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.lqr.audio:library:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e908cf203d92c7768726745693c20b82/transformed/jetified-library-1.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.airbnb.android:lottie:5.0.3] /Users/qiyu/.gradle/caches/transforms-3/dc08cc60737d0bf848f567f404ca780d/transformed/jetified-lottie-5.0.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.0.3] /Users/qiyu/.gradle/caches/transforms-3/dc08cc60737d0bf848f567f404ca780d/transformed/jetified-lottie-5.0.3/AndroidManifest.xml:5:5-7:41
+MERGED from [cjt.library.wheel:camera:1.1.9] /Users/qiyu/.gradle/caches/transforms-3/67ad2368aa85a0cd780c132b9d095aba/transformed/jetified-camera-1.1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [cjt.library.wheel:camera:1.1.9] /Users/qiyu/.gradle/caches/transforms-3/67ad2368aa85a0cd780c132b9d095aba/transformed/jetified-camera-1.1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0] /Users/qiyu/.gradle/caches/transforms-3/27495bd1d33dfa3cbf11a0029c554329/transformed/jetified-subsampling-scale-image-view-androidx-3.10.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0] /Users/qiyu/.gradle/caches/transforms-3/27495bd1d33dfa3cbf11a0029c554329/transformed/jetified-subsampling-scale-image-view-androidx-3.10.0/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] /Users/qiyu/.gradle/caches/transforms-3/a36dd48c06c97a310711e98f6df70921/transformed/appcompat-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] /Users/qiyu/.gradle/caches/transforms-3/a36dd48c06c97a310711e98f6df70921/transformed/appcompat-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.alibaba:arouter-api:1.5.2] /Users/qiyu/.gradle/caches/transforms-3/444ccc4b633edf55eebcf47dbb796c7b/transformed/jetified-arouter-api-1.5.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.alibaba:arouter-api:1.5.2] /Users/qiyu/.gradle/caches/transforms-3/444ccc4b633edf55eebcf47dbb796c7b/transformed/jetified-arouter-api-1.5.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/3ded8084c33e2c23458468282ee33820/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/3ded8084c33e2c23458468282ee33820/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/a7b5b52346fb9ad2cfa45dece98c5bef/transformed/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/a7b5b52346fb9ad2cfa45dece98c5bef/transformed/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/07c5dc88eea34483afecf3e2aaa42331/transformed/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/07c5dc88eea34483afecf3e2aaa42331/transformed/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.multidex:multidex:2.0.1] /Users/qiyu/.gradle/caches/transforms-3/69758ff56b647e2485be5aee381abb02/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.1] /Users/qiyu/.gradle/caches/transforms-3/69758ff56b647e2485be5aee381abb02/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
+MERGED from [io.realm:realm-android-library:10.11.1] /Users/qiyu/.gradle/caches/transforms-3/c30ed9b6f9036c786ef16efa3d42833f/transformed/jetified-realm-android-library-10.11.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.realm:realm-android-library:10.11.1] /Users/qiyu/.gradle/caches/transforms-3/c30ed9b6f9036c786ef16efa3d42833f/transformed/jetified-realm-android-library-10.11.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.realm:realm-android-kotlin-extensions:10.11.1] /Users/qiyu/.gradle/caches/transforms-3/d7f0d63a5c78a392062c9da30601dd8b/transformed/jetified-realm-android-kotlin-extensions-10.11.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.realm:realm-android-kotlin-extensions:10.11.1] /Users/qiyu/.gradle/caches/transforms-3/d7f0d63a5c78a392062c9da30601dd8b/transformed/jetified-realm-android-kotlin-extensions-10.11.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/qiyu/.gradle/caches/transforms-3/b4d5852169918039b344ba1a87dabd91/transformed/jetified-rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/qiyu/.gradle/caches/transforms-3/b4d5852169918039b344ba1a87dabd91/transformed/jetified-rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [com.wang.avi:library:2.1.3] /Users/qiyu/.gradle/caches/transforms-3/1792ef69139bd1170c28758163e8b86c/transformed/jetified-library-2.1.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.wang.avi:library:2.1.3] /Users/qiyu/.gradle/caches/transforms-3/1792ef69139bd1170c28758163e8b86c/transformed/jetified-library-2.1.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/967fdd864bc544d3d340f69daaa16ea3/transformed/jetified-glide-4.13.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/967fdd864bc544d3d340f69daaa16ea3/transformed/jetified-glide-4.13.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/a93678183e6c365146d395be2e01e8e6/transformed/jetified-tinypinyin-lexicons-android-cncity-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/a93678183e6c365146d395be2e01e8e6/transformed/jetified-tinypinyin-lexicons-android-cncity-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.promeg:tinypinyin-android-asset-lexicons:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/d5d05f4ccedc43dfb1810a1cddd17646/transformed/jetified-tinypinyin-android-asset-lexicons-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.promeg:tinypinyin-android-asset-lexicons:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/d5d05f4ccedc43dfb1810a1cddd17646/transformed/jetified-tinypinyin-android-asset-lexicons-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.yanzhenjie.recyclerview:x:1.3.2] /Users/qiyu/.gradle/caches/transforms-3/cf8ad75dd2882fddd081054b0233eda3/transformed/jetified-x-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.yanzhenjie.recyclerview:x:1.3.2] /Users/qiyu/.gradle/caches/transforms-3/cf8ad75dd2882fddd081054b0233eda3/transformed/jetified-x-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:5:5-7:41
+MERGED from [io.openim:android-sdk:2.3.5.1] /Users/qiyu/.gradle/caches/transforms-3/55ca5313ab7b64e3d652c0982f9bb7dd/transformed/jetified-android-sdk-2.3.5.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.openim:android-sdk:2.3.5.1] /Users/qiyu/.gradle/caches/transforms-3/55ca5313ab7b64e3d652c0982f9bb7dd/transformed/jetified-android-sdk-2.3.5.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.openim:core-sdk:2.3.5-t08] /Users/qiyu/.gradle/caches/transforms-3/7edfd79d191638cac817b39c0b9746a9/transformed/jetified-core-sdk-2.3.5-t08/AndroidManifest.xml:2:1-39
+MERGED from [io.openim:core-sdk:2.3.5-t08] /Users/qiyu/.gradle/caches/transforms-3/7edfd79d191638cac817b39c0b9746a9/transformed/jetified-core-sdk-2.3.5-t08/AndroidManifest.xml:2:1-39
+MERGED from [com.contrarywind:Android-PickerView:4.1.9] /Users/qiyu/.gradle/caches/transforms-3/0dcf11a09cae36fb3307eeaa3bb6ad4e/transformed/jetified-Android-PickerView-4.1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.contrarywind:Android-PickerView:4.1.9] /Users/qiyu/.gradle/caches/transforms-3/0dcf11a09cae36fb3307eeaa3bb6ad4e/transformed/jetified-Android-PickerView-4.1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jzvd:jiaozivideoplayer:7.7.0] /Users/qiyu/.gradle/caches/transforms-3/6f1e406f7d80587e05eff0a14dce2714/transformed/jetified-jiaozivideoplayer-7.7.0/AndroidManifest.xml:5:5-7:41
+MERGED from [cn.jzvd:jiaozivideoplayer:7.7.0] /Users/qiyu/.gradle/caches/transforms-3/6f1e406f7d80587e05eff0a14dce2714/transformed/jetified-jiaozivideoplayer-7.7.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/52328c5ec3f1a203e216afff6390c2bf/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/52328c5ec3f1a203e216afff6390c2bf/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/6a049f4b12370ad96cb74fbc2bc2f488/transformed/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/6a049f4b12370ad96cb74fbc2bc2f488/transformed/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/20c32dc5fd26e7647ca097efe7237d10/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/20c32dc5fd26e7647ca097efe7237d10/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ccba6194253aa21aa4b310ec7254d1c8/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ccba6194253aa21aa4b310ec7254d1c8/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/89adc86841fd50b6d08ad187d22c4518/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/89adc86841fd50b6d08ad187d22c4518/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/a61c7e39abf4e14fc685e0e4f3e0f7fa/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/a61c7e39abf4e14fc685e0e4f3e0f7fa/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/9e0a7999723b59d0e40ead74b3a29142/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/9e0a7999723b59d0e40ead74b3a29142/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/072d5a6eeab6ab112d37e499b7296440/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/072d5a6eeab6ab112d37e499b7296440/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/04d8754f0a3f7408464d67928b9cbf0a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/04d8754f0a3f7408464d67928b9cbf0a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/qiyu/.gradle/caches/transforms-3/c2cdf70b2381a55946e2740863061324/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/qiyu/.gradle/caches/transforms-3/c2cdf70b2381a55946e2740863061324/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/4343ec824c08c2966a9406892b6a626e/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/4343ec824c08c2966a9406892b6a626e/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.2.4] /Users/qiyu/.gradle/caches/transforms-3/b899862a50f31f823593556ebcbe5cfd/transformed/jetified-activity-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] /Users/qiyu/.gradle/caches/transforms-3/b899862a50f31f823593556ebcbe5cfd/transformed/jetified-activity-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/06e8bace30637de97576ea8543cb2890/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/06e8bace30637de97576ea8543cb2890/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/f500906a1d0751ea4c50c0b8851eb989/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/f500906a1d0751ea4c50c0b8851eb989/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ef94e3ef4ca9f55764fa5586b825a090/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ef94e3ef4ca9f55764fa5586b825a090/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/ee86915654152f207ccf9580bdf6b95d/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/ee86915654152f207ccf9580bdf6b95d/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/qiyu/.gradle/caches/transforms-3/bdf5618230f2259e0ea302566dc1dc04/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/qiyu/.gradle/caches/transforms-3/bdf5618230f2259e0ea302566dc1dc04/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] /Users/qiyu/.gradle/caches/transforms-3/ddc0131347d5c1a4d1abf600635fff3d/transformed/jetified-appcompat-resources-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] /Users/qiyu/.gradle/caches/transforms-3/ddc0131347d5c1a4d1abf600635fff3d/transformed/jetified-appcompat-resources-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/396c9c8a2ffcf6cba753b48760281057/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/396c9c8a2ffcf6cba753b48760281057/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/d7e289626daefa178bff947263d531a6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/d7e289626daefa178bff947263d531a6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e34bef134904c56951986487f46e80b9/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/e34bef134904c56951986487f46e80b9/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/5b92d4f8c1c94a312aba491f67beea50/transformed/jetified-gifdecoder-4.13.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] /Users/qiyu/.gradle/caches/transforms-3/5b92d4f8c1c94a312aba491f67beea50/transformed/jetified-gifdecoder-4.13.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Users/qiyu/.gradle/caches/transforms-3/62228e68c468896c0166e1f8ccb74ec1/transformed/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Users/qiyu/.gradle/caches/transforms-3/62228e68c468896c0166e1f8ccb74ec1/transformed/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/8b21b758247cb44cd45277498a3b0ca4/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/8b21b758247cb44cd45277498a3b0ca4/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/f759950d90e3a16d0b1a0973759d3e3b/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/f759950d90e3a16d0b1a0973759d3e3b/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.contrarywind:wheelview:4.1.0] /Users/qiyu/.gradle/caches/transforms-3/6b8ead8bee35e52102ea40858eb45f5d/transformed/jetified-wheelview-4.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.contrarywind:wheelview:4.1.0] /Users/qiyu/.gradle/caches/transforms-3/6b8ead8bee35e52102ea40858eb45f5d/transformed/jetified-wheelview-4.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/9c4886525d2e54c10c64357e2b69a5f6/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/9c4886525d2e54c10c64357e2b69a5f6/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/4d0aaee9a14ddb43fe5d29e2645c6761/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/4d0aaee9a14ddb43fe5d29e2645c6761/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7766235025ade5f40bbb310674ca18ea/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7766235025ade5f40bbb310674ca18ea/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7f446b35e74fdd9763fc0f8b4bae7704/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7f446b35e74fdd9763fc0f8b4bae7704/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ba1c530b26a1d6385717c94b12423000/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/ba1c530b26a1d6385717c94b12423000/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/c5f05fc77b17a1af9985facfd91a6b56/transformed/lifecycle-livedata-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/c5f05fc77b17a1af9985facfd91a6b56/transformed/lifecycle-livedata-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/0fef175aab2390f82e570457b7e77b52/transformed/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/0fef175aab2390f82e570457b7e77b52/transformed/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/72964c1ef097633c7600dc76e6217bf7/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/72964c1ef097633c7600dc76e6217bf7/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/6dec9d00163c54e242a7f04806cedc5e/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/6dec9d00163c54e242a7f04806cedc5e/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/edaaede9801b3039d9ddff8599943f0b/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/qiyu/.gradle/caches/transforms-3/edaaede9801b3039d9ddff8599943f0b/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/qiyu/.gradle/caches/transforms-3/8780e25e20ef364340f14a106133a6a9/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/qiyu/.gradle/caches/transforms-3/8780e25e20ef364340f14a106133a6a9/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/9623c995d3a2bb450aa161dc8c99b49e/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/9623c995d3a2bb450aa161dc8c99b49e/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/qiyu/.gradle/caches/transforms-3/f24cbb229c53b834cf80e9f99766296b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/qiyu/.gradle/caches/transforms-3/f24cbb229c53b834cf80e9f99766296b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7b5bed327c8032e4dd5c553f2ed953dc/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/7b5bed327c8032e4dd5c553f2ed953dc/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/cf31bf7f2b034965a6318c2a82fbce0a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/cf31bf7f2b034965a6318c2a82fbce0a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/61d04d6852bfe2409d41d486640b18ad/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/61d04d6852bfe2409d41d486640b18ad/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/467894ff3a623af0fab5da1e4f7016e8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/qiyu/.gradle/caches/transforms-3/467894ff3a623af0fab5da1e4f7016e8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/5ac27be94f4d3996fc1ca5b76225a99a/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/qiyu/.gradle/caches/transforms-3/5ac27be94f4d3996fc1ca5b76225a99a/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [q.rorbin:badgeview:1.1.3] /Users/qiyu/.gradle/caches/transforms-3/5ad7cf7a4fbc970f0337dffa48cc5dee/transformed/jetified-badgeview-1.1.3/AndroidManifest.xml:7:5-9:41
+MERGED from [q.rorbin:badgeview:1.1.3] /Users/qiyu/.gradle/caches/transforms-3/5ad7cf7a4fbc970f0337dffa48cc5dee/transformed/jetified-badgeview-1.1.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] /Users/qiyu/.gradle/caches/transforms-3/0932343301dc7c458ac3ef5efbfe6d3c/transformed/jetified-relinker-1.4.3/AndroidManifest.xml:5:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] /Users/qiyu/.gradle/caches/transforms-3/0932343301dc7c458ac3ef5efbfe6d3c/transformed/jetified-relinker-1.4.3/AndroidManifest.xml:5:5-43
+MERGED from [it.sephiroth.android.library.imagezoom:library:1.0.4] /Users/qiyu/.gradle/caches/transforms-3/342992ab31c8f2e0a83b9a5469c2ec2b/transformed/jetified-library-1.0.4/AndroidManifest.xml:3:5-72
+MERGED from [it.sephiroth.android.library.imagezoom:library:1.0.4] /Users/qiyu/.gradle/caches/transforms-3/342992ab31c8f2e0a83b9a5469c2ec2b/transformed/jetified-library-1.0.4/AndroidManifest.xml:3:5-72
+MERGED from [it.sephiroth.android.library.easing:library:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/8b834e00740f4c483b6efe9a97dd8967/transformed/jetified-library-1.0.2/AndroidManifest.xml:3:5-72
+MERGED from [it.sephiroth.android.library.easing:library:1.0.2] /Users/qiyu/.gradle/caches/transforms-3/8b834e00740f4c483b6efe9a97dd8967/transformed/jetified-library-1.0.2/AndroidManifest.xml:3:5-72
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.FLASHLIGHT
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-69
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:10:5-69
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:10:5-69
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-66
+uses-feature#android.hardware.camera
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-60
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:12:5-60
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:12:5-60
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-70
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:13:5-70
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:13:5-70
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:19-67
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-71
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:5-71
+MERGED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:5-71
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:22-68
+uses-permission#android.permission.CAMERA
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-65
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:9:5-65
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:22-62
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-73
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-70
+activity#io.openim.android.ouiconversation.ui.MsgReadStatusActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-86
+activity#io.openim.android.ouiconversation.ui.SearchActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-79
+activity#io.openim.android.ouiconversation.ui.FileHistoryActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-84
+activity#io.openim.android.ouiconversation.ui.MediaHistoryActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-85
+activity#io.openim.android.ouiconversation.ui.SetChatBgActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:9-33:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-82
+activity#io.openim.android.ouiconversation.ui.ChatSettingActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-36:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-84
+activity#io.openim.android.ouiconversation.ui.ChatHistorySearchActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-39:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-90
+activity#io.openim.android.ouiconversation.ui.PreviewActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:9-42:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-80
+activity#io.openim.android.ouiconversation.ui.ShootActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-45:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-78
+activity#io.openim.android.ouiconversation.ui.ChatActivity
+ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:46:9-48:40
+	android:exported
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from [:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-77
+activity#io.openim.android.ouigroup.ui.NoticeDetailActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-78
+activity#io.openim.android.ouigroup.ui.ShareQrcodeActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-15:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-77
+activity#io.openim.android.ouigroup.ui.GroupBulletinActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-79
+activity#io.openim.android.ouigroup.ui.GroupMemberActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-77
+activity#io.openim.android.ouigroup.ui.SuperGroupMemberActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-82
+activity#io.openim.android.ouigroup.ui.GroupMaterialActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-79
+activity#io.openim.android.ouigroup.ui.CreateGroupActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+	android:exported
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-77
+activity#io.openim.android.ouigroup.ui.InitiateGroupActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:9-88
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:19-85
+activity#io.openim.android.ouigroup.ui.GroupDetailActivity
+ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:9-86
+	android:name
+		ADDED from [:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:19-83
+activity#io.openim.android.ouicontact.ui.MyGroupActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-75
+activity#io.openim.android.ouicontact.ui.ForwardToActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-15:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-77
+activity#io.openim.android.ouicontact.ui.AllFriendActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-77
+activity#io.openim.android.ouicontact.ui.FriendRequestDetailActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-87
+activity#io.openim.android.ouicontact.ui.NewFriendActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-77
+activity#io.openim.android.ouicontact.ui.GroupNoticeListActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-83
+activity#io.openim.android.ouicontact.ui.GroupNoticeDetailActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-85
+activity#io.openim.android.ouicontact.DebugActivity
+ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:9-33:39
+	android:exported
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-36
+	android:name
+		ADDED from [:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-70
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
+MERGED from [cn.jzvd:jiaozivideoplayer:7.7.0] /Users/qiyu/.gradle/caches/transforms-3/6f1e406f7d80587e05eff0a14dce2714/transformed/jetified-jiaozivideoplayer-7.7.0/AndroidManifest.xml:9:5-79
+MERGED from [cn.jzvd:jiaozivideoplayer:7.7.0] /Users/qiyu/.gradle/caches/transforms-3/6f1e406f7d80587e05eff0a14dce2714/transformed/jetified-jiaozivideoplayer-7.7.0/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-75
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-72
+uses-permission#android.permission.INTERNET
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-80
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:24:5-80
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:24:5-80
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:17:5-80
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:17:5-80
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-81
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:25:5-81
+MERGED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:25:5-81
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:18:5-81
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:18:5-81
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:22-78
+permission-group#${applicationId}.andpermission
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-71
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:23-68
+permission-group#io.openim.android.demo.andpermission
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-71
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:23-68
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-68
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:16:5-68
+MERGED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:16:5-68
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:22-65
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-81
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:22-76
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:5-78
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:22-75
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:5-80
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:22-77
+activity#io.openim.android.ouicore.widget.SingleInfoModifyActivity
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-85
+activity#io.openim.android.ouicore.widget.WebViewActivity
+ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+	android:exported
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-76
+activity#com.zhihu.matisse.ui.MatisseActivity
+ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:28:9-73
+	android:name
+		ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:28:19-70
+activity#com.zhihu.matisse.ui.CaptureDelegateActivity
+ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:29:9-31:63
+	android:theme
+		ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:31:13-60
+	android:name
+		ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:30:13-72
+activity#com.zhihu.matisse.internal.ui.AlbumPreviewActivity
+ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:32:9-87
+	android:name
+		ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:32:19-84
+activity#com.zhihu.matisse.internal.ui.SelectedPreviewActivity
+ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:33:9-90
+	android:name
+		ADDED from [com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:33:19-87
+permission#${applicationId}.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:24:5-27:47
+	android:protectionLevel
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:27:9-44
+	android:permissionGroup
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:26:9-65
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:25:9-61
+permission#io.openim.android.demo.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:24:5-27:47
+	android:protectionLevel
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:27:9-44
+	android:permissionGroup
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:26:9-65
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:25:9-61
+uses-permission#${applicationId}.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:29:5-77
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:29:22-74
+uses-permission#io.openim.android.demo.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:29:5-77
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:29:22-74
+service#com.yanzhenjie.permission.bridge.BridgeService
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:32:9-40:19
+	android:process
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:36:13-42
+	android:exported
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:34:13-37
+	android:permission
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:35:13-71
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:33:13-74
+intent-filter#action:name:${applicationId}.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:37:13-39:29
+intent-filter#action:name:io.openim.android.demo.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:37:13-39:29
+action#${applicationId}.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:38:17-80
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:38:25-77
+action#io.openim.android.demo.andpermission.bridge
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:38:17-80
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:38:25-77
+activity#com.yanzhenjie.permission.bridge.BridgeActivity
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:42:9-48:76
+	android:process
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:47:13-42
+	android:exported
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:45:13-37
+	android:permission
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:46:13-71
+	android:configChanges
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:44:13-48
+	android:theme
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:48:13-73
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:43:13-75
+provider#com.yanzhenjie.permission.FileProvider
+ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:50:9-58:20
+	android:grantUriPermissions
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:54:13-47
+	android:authorities
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:52:13-67
+	android:exported
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from [com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:51:13-66
+uses-permission#android.permission.VIBRATE
+ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:15:22-63
+activity#com.yzq.zxinglibrary.android.CaptureActivity
+ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:21:9-26:67
+	android:screenOrientation
+		ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:24:13-49
+	android:windowSoftInputMode
+		ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:26:13-64
+	android:configChanges
+		ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:23:13-59
+	android:theme
+		ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:25:13-63
+	android:name
+		ADDED from [com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:22:13-72
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79

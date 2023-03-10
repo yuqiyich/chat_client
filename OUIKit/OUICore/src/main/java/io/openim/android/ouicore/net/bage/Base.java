@@ -5,9 +5,9 @@ package io.openim.android.ouicore.net.bage;
  */
 
 public class Base<T> {
-    public int errCode;
+    public int errorCode;
 
-    public String errMsg;
+    public String errorMsg;
 
     public T data;
 }

@@ -2,19 +2,14 @@ package io.openim.android.ouiconversation.vm;
 
 
 import static io.openim.android.ouicore.utils.Common.UIHandler;
-import static io.openim.android.ouicore.utils.Common.md5;
 
-import android.annotation.SuppressLint;
 import android.os.Build;
 import android.text.TextUtils;
 
-import androidx.annotation.RequiresApi;
 import androidx.databinding.ObservableBoolean;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
-
-import com.alibaba.android.arouter.launcher.ARouter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,36 +18,25 @@ import java.util.Collections;
 import java.util.List;
 
 
-import io.openim.android.ouiconversation.R;
 import io.openim.android.ouiconversation.adapter.MessageAdapter;
 import io.openim.android.ouicore.base.BaseApp;
-import io.openim.android.ouicore.entity.AtMsgInfo;
-import io.openim.android.ouicore.entity.LoginCertificate;
-import io.openim.android.ouicore.entity.MsgExpand;
 import io.openim.android.ouicore.entity.NotificationMsg;
 import io.openim.android.ouicore.entity.OnlineStatus;
 import io.openim.android.ouicore.net.RXRetrofit.N;
 import io.openim.android.ouicore.net.RXRetrofit.NetObserver;
 import io.openim.android.ouicore.net.RXRetrofit.Parameter;
 import io.openim.android.ouicore.net.bage.Base;
-import io.openim.android.ouicore.services.CallingService;
 import io.openim.android.ouicore.services.OneselfService;
-import io.openim.android.ouicore.utils.Common;
 import io.openim.android.ouicore.utils.Constant;
 import io.openim.android.ouicore.base.BaseViewModel;
 import io.openim.android.ouicore.base.IView;
-import io.openim.android.ouicore.entity.LocationInfo;
 import io.openim.android.ouicore.im.IMEvent;
 import io.openim.android.ouicore.im.IMUtil;
 import io.openim.android.ouicore.net.bage.GsonHel;
-import io.openim.android.ouicore.utils.FixSizeLinkedList;
 import io.openim.android.ouicore.utils.L;
-import io.openim.android.ouicore.utils.Routes;
-import io.openim.android.ouicore.utils.TimeUtil;
 import io.openim.android.ouicore.widget.WaitDialog;
 import io.openim.android.sdk.OpenIMClient;
 
-import io.openim.android.sdk.enums.ConversationType;
 import io.openim.android.sdk.listener.OnAdvanceMsgListener;
 import io.openim.android.sdk.listener.OnBase;
 import io.openim.android.sdk.listener.OnMsgSendCallback;
@@ -66,8 +50,6 @@ import io.openim.android.sdk.models.OfflinePushInfo;
 import io.openim.android.sdk.models.ReadReceiptInfo;
 import io.openim.android.sdk.models.RevokedInfo;
 import io.openim.android.sdk.models.SearchResult;
-import io.openim.android.sdk.models.SearchResultItem;
-import io.openim.android.sdk.models.UserInfo;
 import okhttp3.ResponseBody;
 
 public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanceMsgListener {
@@ -142,8 +124,8 @@ public class ChatVM extends BaseViewModel<ChatVM.ViewAction> implements OnAdvanc
                     try {
                         String body = o.string();
                         Base<List<OnlineStatus>> base = GsonHel.dataArray(body, OnlineStatus.class);
-                        if (base.errCode != 0) {
-                            IView.toast(base.errMsg);
+                        if (base.errorCode != 0) {
+                            IView.toast(base.errorMsg);
                             return;
                         }
                         if (null == base.data || base.data.isEmpty()) return;

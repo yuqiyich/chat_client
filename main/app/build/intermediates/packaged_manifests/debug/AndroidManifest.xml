@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.openim.android.demo"
+    android:versionCode="2"
+    android:versionName="1.0.2" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission-group android:name="io.openim.android.demo.andpermission" /> <!-- 播音 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Always include this permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <permission
+        android:name="io.openim.android.demo.andpermission.bridge"
+        android:permissionGroup="io.openim.android.demo.andpermission"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="io.openim.android.demo.andpermission.bridge" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name="io.openim.android.demo.DemoApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_splash"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demo"
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name="io.openim.android.demo.ui.ServerConfigActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.user.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.main.CallHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.user.MoreDataActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.user.PersonDataActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.main.EditTextActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.user.PersonalInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.login.SupplementInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.login.VerificationCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.search.SendVerifyActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.search.PersonDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.search.SearchConversActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.search.AddConversActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.login.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.demo.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.openim.android.demo.ui.main.MainActivity"
+            android:launchMode="singleTask" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="io.openim.android.demo.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.MsgReadStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.FileHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.MediaHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.SetChatBgActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.ChatSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.ChatHistorySearchActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.PreviewActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.ShootActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouiconversation.ui.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.NoticeDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.ShareQrcodeActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.GroupBulletinActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.GroupMemberActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.SuperGroupMemberActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.GroupMaterialActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouigroup.ui.CreateGroupActivity"
+            android:exported="false" />
+        <activity android:name="io.openim.android.ouigroup.ui.InitiateGroupActivity" />
+        <activity android:name="io.openim.android.ouigroup.ui.GroupDetailActivity" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.MyGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.ForwardToActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.AllFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.FriendRequestDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.NewFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.GroupNoticeListActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.ui.GroupNoticeDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicontact.DebugActivity"
+            android:exported="true" />
+        <activity
+            android:name="io.openim.android.ouicore.widget.SingleInfoModifyActivity"
+            android:exported="false" />
+        <activity
+            android:name="io.openim.android.ouicore.widget.WebViewActivity"
+            android:exported="false" />
+        <activity android:name="com.zhihu.matisse.ui.MatisseActivity" />
+        <activity
+            android:name="com.zhihu.matisse.ui.CaptureDelegateActivity"
+            android:theme="@style/Matisse.TransparentTheme" />
+        <activity android:name="com.zhihu.matisse.internal.ui.AlbumPreviewActivity" />
+        <activity android:name="com.zhihu.matisse.internal.ui.SelectedPreviewActivity" />
+
+        <service
+            android:name="com.yanzhenjie.permission.bridge.BridgeService"
+            android:exported="false"
+            android:permission="io.openim.android.demo.andpermission.bridge"
+            android:process=":permission" >
+            <intent-filter>
+                <action android:name="io.openim.android.demo.andpermission.bridge" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.yanzhenjie.permission.bridge.BridgeActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:permission="io.openim.android.demo.andpermission.bridge"
+            android:process=":permission"
+            android:theme="@style/Permission.Theme.Activity.Transparent" />
+
+        <provider
+            android:name="com.yanzhenjie.permission.FileProvider"
+            android:authorities="io.openim.android.demo.file.path.share"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/permission_file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.yzq.zxinglibrary.android.CaptureActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="io.openim.android.demo.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

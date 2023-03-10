@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    
+
+                 
+                         
+                                                      
+
+           
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.main.MainActivity" android:tag="layout/activity_main_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="15dp">
+
+                <io.openim.android.ouicore.widget.AvatarImage
+                    android:id="@+id/avatar"
+                    android:layout_width="@dimen/avatar_size"
+                    android:layout_height="@dimen/avatar_size"
+                    android:src="@mipmap/ic_my_friend" />
+
+                <TextView
+                    android:id="@+id/nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginRight="11dp"
+                    android:tag="binding_1"           
+                    android:textColor="#ff333333"
+
+                    android:textSize="18sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/isOnline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@mipmap/ic_online" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="在线"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/callRecord"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:layout_marginRight="15dp"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_call_white" />
+
+                <ImageView
+                    android:id="@+id/addFriend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_add" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="60dp" />
+
+            <com.lihang.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginRight="-8dp"
+                app:hl_bottomShow="false"
+                app:hl_shadowColor="#2a000000"
+                app:hl_shadowLimit="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/menuGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp">
+
+                        <RadioButton
+                            android:id="@+id/men1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableTop="@mipmap/ic_logo"
+                            android:gravity="center"
+                            android:text="OpenIM"
+                            android:textColor="#ff1b72ec"
+                            android:textSize="10sp" />
+
+                        <RadioButton
+                            android:id="@+id/men2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableTop="@mipmap/ic_newsletter"
+                            android:gravity="center"
+                            android:text="@string/address_book"
+                            android:textColor="#ff1b72ec"
+                            android:textSize="10sp" />
+
+                        <RadioButton
+                            android:id="@+id/men3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableTop="@mipmap/ic_my"
+                            android:gravity="center"
+                            android:text="@string/my"
+                            android:textColor="#ff1b72ec"
+                            android:textSize="10sp" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="45dp"
+                        android:visibility="gone" android:tag="binding_2">
+
+                        <include
+                            layout="@layout/view_badge"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </com.lihang.ShadowLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+         

@@ -1,0 +1,502 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.openim.android.demo"
+4    android:versionCode="2"
+5    android:versionName="1.0.2" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.FLASHLIGHT" />
+11-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-69
+11-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-66
+12
+13    <uses-feature android:name="android.hardware.camera" />
+13-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-60
+13-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:19-57
+14    <uses-feature android:name="android.hardware.camera.autofocus" />
+14-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-70
+14-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:19-67
+15
+16    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+16-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-71
+16-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:22-68
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-65
+17-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:22-62
+18    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+18-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-73
+18-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-70
+19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+19-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+19-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
+20-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
+21    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+21-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-75
+21-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-72
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-67
+22-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-64
+23    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+23-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-80
+23-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-77
+24    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+24-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-81
+24-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:22-78
+25
+26    <permission-group android:name="io.openim.android.demo.andpermission" /> <!-- 播音 -->
+26-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-71
+26-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:23-68
+27    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Always include this permission -->
+27-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-68
+27-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:22-65
+28    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include only if your app benefits from precise location access. -->
+28-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-81
+28-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:22-78
+29    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+29-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-79
+29-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:22-76
+30    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+30-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:5-78
+30-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:22-75
+31    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+31-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:5-80
+31-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:22-77
+32
+33    <permission
+33-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:24:5-27:47
+34        android:name="io.openim.android.demo.andpermission.bridge"
+34-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:25:9-61
+35        android:permissionGroup="io.openim.android.demo.andpermission"
+35-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:26:9-65
+36        android:protectionLevel="signature" />
+36-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:27:9-44
+37
+38    <uses-permission android:name="io.openim.android.demo.andpermission.bridge" />
+38-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:29:5-77
+38-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:29:22-74
+39    <uses-permission android:name="android.permission.VIBRATE" />
+39-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:15:5-66
+39-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:15:22-63
+40
+41    <application
+41-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:5:5-82:19
+42        android:name="io.openim.android.demo.DemoApplication"
+42-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:6:9-40
+43        android:allowBackup="true"
+43-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:7:9-35
+44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+44-->[androidx.core:core:1.8.0] /Users/qiyu/.gradle/caches/transforms-3/c9c105411740a235a1c9af1fd0cca089/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+45        android:debuggable="true"
+46        android:icon="@mipmap/ic_splash"
+46-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:8:9-41
+47        android:label="@string/app_name"
+47-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:9:9-41
+48        android:requestLegacyExternalStorage="true"
+48-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:10:9-52
+49        android:supportsRtl="true"
+49-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:11:9-35
+50        android:theme="@style/Theme.Demo"
+50-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:12:9-42
+51        android:usesCleartextTraffic="true" >
+51-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:13:9-44
+52        <activity
+52-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:14:9-16:40
+53            android:name="io.openim.android.demo.ui.ServerConfigActivity"
+53-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:15:13-52
+54            android:exported="false" />
+54-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:16:13-37
+55        <activity
+55-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:17:9-19:40
+56            android:name="io.openim.android.demo.ui.user.AboutUsActivity"
+56-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:18:13-52
+57            android:exported="false" />
+57-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:19:13-37
+58        <activity
+58-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:20:9-22:40
+59            android:name="io.openim.android.demo.ui.main.CallHistoryActivity"
+59-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:21:13-56
+60            android:exported="false" />
+60-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:22:13-37
+61        <activity
+61-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:23:9-25:40
+62            android:name="io.openim.android.demo.ui.user.MoreDataActivity"
+62-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:24:13-53
+63            android:exported="false" />
+63-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:25:13-37
+64        <activity
+64-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:26:9-28:40
+65            android:name="io.openim.android.demo.ui.user.PersonDataActivity"
+65-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:27:13-55
+66            android:exported="false" />
+66-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:28:13-37
+67        <activity
+67-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:29:9-31:40
+68            android:name="io.openim.android.demo.ui.main.EditTextActivity"
+68-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:30:13-53
+69            android:exported="false" />
+69-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:31:13-37
+70        <activity
+70-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:32:9-34:40
+71            android:name="io.openim.android.demo.ui.user.PersonalInfoActivity"
+71-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:33:13-57
+72            android:exported="false" />
+72-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:34:13-37
+73        <activity
+73-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:35:9-37:40
+74            android:name="io.openim.android.demo.ui.login.SupplementInfoActivity"
+74-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:36:13-60
+75            android:exported="false" />
+75-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:37:13-37
+76        <activity
+76-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:38:9-40:40
+77            android:name="io.openim.android.demo.ui.login.VerificationCodeActivity"
+77-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:39:13-62
+78            android:exported="false" />
+78-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:40:13-37
+79        <activity
+79-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:41:9-43:40
+80            android:name="io.openim.android.demo.ui.search.SendVerifyActivity"
+80-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:42:13-57
+81            android:exported="false" />
+81-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:43:13-37
+82        <activity
+82-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:44:9-46:40
+83            android:name="io.openim.android.demo.ui.search.PersonDetailActivity"
+83-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:45:13-59
+84            android:exported="false" />
+84-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:46:13-37
+85        <activity
+85-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:47:9-49:40
+86            android:name="io.openim.android.demo.ui.search.SearchConversActivity"
+86-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:48:13-60
+87            android:exported="false" />
+87-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:49:13-37
+88        <activity
+88-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:50:9-52:40
+89            android:name="io.openim.android.demo.ui.search.AddConversActivity"
+89-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:51:13-57
+90            android:exported="false" />
+90-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:52:13-37
+91        <activity
+91-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:53:9-55:40
+92            android:name="io.openim.android.demo.ui.login.RegisterActivity"
+92-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:54:13-54
+93            android:exported="false" />
+93-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:55:13-37
+94        <activity
+94-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:56:9-58:40
+95            android:name="io.openim.android.demo.ui.login.LoginActivity"
+95-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:57:13-51
+96            android:exported="false" />
+96-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:58:13-37
+97        <activity
+97-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:59:9-68:20
+98            android:name="io.openim.android.demo.SplashActivity"
+98-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:60:13-43
+99            android:exported="true"
+99-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:61:13-36
+100            android:theme="@style/SplashTheme" >
+100-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:62:13-47
+101            <intent-filter>
+101-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:63:13-67:29
+102                <action android:name="android.intent.action.MAIN" />
+102-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:64:17-69
+102-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:64:25-66
+103
+104                <category android:name="android.intent.category.LAUNCHER" />
+104-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:66:17-77
+104-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:66:27-74
+105            </intent-filter>
+106        </activity>
+107        <activity
+107-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:69:9-71:47
+108            android:name="io.openim.android.demo.ui.main.MainActivity"
+108-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:70:13-49
+109            android:launchMode="singleTask" />
+109-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:71:13-44
+110
+111        <provider
+111-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:73:9-81:20
+112            android:name="androidx.core.content.FileProvider"
+112-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:74:13-62
+113            android:authorities="io.openim.android.demo.fileProvider"
+113-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:75:13-70
+114            android:exported="false"
+114-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:76:13-37
+115            android:grantUriPermissions="true" >
+115-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:77:13-47
+116            <meta-data
+116-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:78:13-80:54
+117                android:name="android.support.FILE_PROVIDER_PATHS"
+117-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:79:17-67
+118                android:resource="@xml/file_paths" />
+118-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:80:17-51
+119        </provider>
+120
+121        <activity
+121-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+122            android:name="io.openim.android.ouiconversation.ui.MsgReadStatusActivity"
+122-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-86
+123            android:exported="false" />
+123-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+124        <activity
+124-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-24:40
+125            android:name="io.openim.android.ouiconversation.ui.SearchActivity"
+125-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-79
+126            android:exported="false" />
+126-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+127        <activity
+127-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+128            android:name="io.openim.android.ouiconversation.ui.FileHistoryActivity"
+128-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-84
+129            android:exported="false" />
+129-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+130        <activity
+130-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+131            android:name="io.openim.android.ouiconversation.ui.MediaHistoryActivity"
+131-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-85
+132            android:exported="false" />
+132-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+133        <activity
+133-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:9-33:40
+134            android:name="io.openim.android.ouiconversation.ui.SetChatBgActivity"
+134-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-82
+135            android:exported="false" />
+135-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-37
+136        <activity
+136-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-36:40
+137            android:name="io.openim.android.ouiconversation.ui.ChatSettingActivity"
+137-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-84
+138            android:exported="false" />
+138-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-37
+139        <activity
+139-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-39:40
+140            android:name="io.openim.android.ouiconversation.ui.ChatHistorySearchActivity"
+140-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-90
+141            android:exported="false" />
+141-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-37
+142        <activity
+142-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:9-42:40
+143            android:name="io.openim.android.ouiconversation.ui.PreviewActivity"
+143-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-80
+144            android:exported="false" />
+144-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-37
+145        <activity
+145-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-45:40
+146            android:name="io.openim.android.ouiconversation.ui.ShootActivity"
+146-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-78
+147            android:exported="false" />
+147-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-37
+148        <activity
+148-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:46:9-48:40
+149            android:name="io.openim.android.ouiconversation.ui.ChatActivity"
+149-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-77
+150            android:exported="false" />
+150-->[:OUIConversation] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIConversation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:48:13-37
+151        <activity
+151-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:40
+152            android:name="io.openim.android.ouigroup.ui.NoticeDetailActivity"
+152-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-78
+153            android:exported="false" />
+153-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+154        <activity
+154-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-15:40
+155            android:name="io.openim.android.ouigroup.ui.ShareQrcodeActivity"
+155-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-77
+156            android:exported="false" />
+156-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+157        <activity
+157-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+158            android:name="io.openim.android.ouigroup.ui.GroupBulletinActivity"
+158-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-79
+159            android:exported="false" />
+159-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+160        <activity
+160-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+161            android:name="io.openim.android.ouigroup.ui.GroupMemberActivity"
+161-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-77
+162            android:exported="false" />
+162-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+163        <activity
+163-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-24:40
+164            android:name="io.openim.android.ouigroup.ui.SuperGroupMemberActivity"
+164-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-82
+165            android:exported="false" />
+165-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+166        <activity
+166-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+167            android:name="io.openim.android.ouigroup.ui.GroupMaterialActivity"
+167-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-79
+168            android:exported="false" />
+168-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+169        <activity
+169-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+170            android:name="io.openim.android.ouigroup.ui.CreateGroupActivity"
+170-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-77
+171            android:exported="false" />
+171-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+172        <activity android:name="io.openim.android.ouigroup.ui.InitiateGroupActivity" />
+172-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:9-88
+172-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:19-85
+173        <activity android:name="io.openim.android.ouigroup.ui.GroupDetailActivity" />
+173-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:9-86
+173-->[:OUIGroup] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIGroup/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:19-83
+174        <activity
+174-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:40
+175            android:name="io.openim.android.ouicontact.ui.MyGroupActivity"
+175-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-75
+176            android:exported="false" />
+176-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+177        <activity
+177-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-15:40
+178            android:name="io.openim.android.ouicontact.ui.ForwardToActivity"
+178-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-77
+179            android:exported="false" />
+179-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+180        <activity
+180-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+181            android:name="io.openim.android.ouicontact.ui.AllFriendActivity"
+181-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-77
+182            android:exported="false" />
+182-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+183        <activity
+183-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+184            android:name="io.openim.android.ouicontact.ui.FriendRequestDetailActivity"
+184-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-87
+185            android:exported="false" />
+185-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+186        <activity
+186-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-24:40
+187            android:name="io.openim.android.ouicontact.ui.NewFriendActivity"
+187-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-77
+188            android:exported="false" />
+188-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+189        <activity
+189-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+190            android:name="io.openim.android.ouicontact.ui.GroupNoticeListActivity"
+190-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-83
+191            android:exported="false" />
+191-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+192        <activity
+192-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+193            android:name="io.openim.android.ouicontact.ui.GroupNoticeDetailActivity"
+193-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-85
+194            android:exported="false" />
+194-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+195        <activity
+195-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:9-33:39
+196            android:name="io.openim.android.ouicontact.DebugActivity"
+196-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-70
+197            android:exported="true" />
+197-->[:OUIContact] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUIContact/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-36
+198        <activity
+198-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-27:40
+199            android:name="io.openim.android.ouicore.widget.SingleInfoModifyActivity"
+199-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-85
+200            android:exported="false" />
+200-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-37
+201        <activity
+201-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:40
+202            android:name="io.openim.android.ouicore.widget.WebViewActivity"
+202-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-76
+203            android:exported="false" />
+203-->[:OUICore] /Users/qiyu/StudioProjects/Open-IM-Android-Demo/OUIKit/OUICore/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-37
+204        <activity android:name="com.zhihu.matisse.ui.MatisseActivity" />
+204-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:28:9-73
+204-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:28:19-70
+205        <activity
+205-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:29:9-31:63
+206            android:name="com.zhihu.matisse.ui.CaptureDelegateActivity"
+206-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:30:13-72
+207            android:theme="@style/Matisse.TransparentTheme" />
+207-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:31:13-60
+208        <activity android:name="com.zhihu.matisse.internal.ui.AlbumPreviewActivity" />
+208-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:32:9-87
+208-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:32:19-84
+209        <activity android:name="com.zhihu.matisse.internal.ui.SelectedPreviewActivity" />
+209-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:33:9-90
+209-->[com.github.lwj1994:Matisse:0.5.3-20220115] /Users/qiyu/.gradle/caches/transforms-3/de48652a764e66a8276739f550d37f2a/transformed/jetified-Matisse-0.5.3-20220115/AndroidManifest.xml:33:19-87
+210
+211        <service
+211-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:32:9-40:19
+212            android:name="com.yanzhenjie.permission.bridge.BridgeService"
+212-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:33:13-74
+213            android:exported="false"
+213-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:34:13-37
+214            android:permission="io.openim.android.demo.andpermission.bridge"
+214-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:35:13-71
+215            android:process=":permission" >
+215-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:36:13-42
+216            <intent-filter>
+216-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:37:13-39:29
+217                <action android:name="io.openim.android.demo.andpermission.bridge" />
+217-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:38:17-80
+217-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:38:25-77
+218            </intent-filter>
+219        </service>
+220
+221        <activity
+221-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:42:9-48:76
+222            android:name="com.yanzhenjie.permission.bridge.BridgeActivity"
+222-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:43:13-75
+223            android:configChanges="orientation"
+223-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:44:13-48
+224            android:exported="false"
+224-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:45:13-37
+225            android:permission="io.openim.android.demo.andpermission.bridge"
+225-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:46:13-71
+226            android:process=":permission"
+226-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:47:13-42
+227            android:theme="@style/Permission.Theme.Activity.Transparent" />
+227-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:48:13-73
+228
+229        <provider
+229-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:50:9-58:20
+230            android:name="com.yanzhenjie.permission.FileProvider"
+230-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:51:13-66
+231            android:authorities="io.openim.android.demo.file.path.share"
+231-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:52:13-67
+232            android:exported="false"
+232-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:53:13-37
+233            android:grantUriPermissions="true" >
+233-->[com.yanzhenjie:permission:2.0.3] /Users/qiyu/.gradle/caches/transforms-3/ed824320231d0cfe290ac5a9d9b36027/transformed/jetified-permission-2.0.3/AndroidManifest.xml:54:13-47
+234            <meta-data
+234-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:78:13-80:54
+235                android:name="android.support.FILE_PROVIDER_PATHS"
+235-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:79:17-67
+236                android:resource="@xml/permission_file_paths" />
+236-->/Users/qiyu/StudioProjects/Open-IM-Android-Demo/Demo/app/src/main/AndroidManifest.xml:80:17-51
+237        </provider>
+238
+239        <activity
+239-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:21:9-26:67
+240            android:name="com.yzq.zxinglibrary.android.CaptureActivity"
+240-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:22:13-72
+241            android:configChanges="orientation|screenSize"
+241-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:23:13-59
+242            android:screenOrientation="portrait"
+242-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:24:13-49
+243            android:theme="@style/Theme.AppCompat.NoActionBar"
+243-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:25:13-63
+244            android:windowSoftInputMode="adjustPan|stateHidden" />
+244-->[com.github.yuzhiqiang1993:zxing:2.2.9] /Users/qiyu/.gradle/caches/transforms-3/e5f4333df9adf3995b3cc224ceeea113/transformed/jetified-zxing-2.2.9/AndroidManifest.xml:26:13-64
+245
+246        <provider
+246-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+247            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+247-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+248            android:authorities="io.openim.android.demo.lifecycle-process"
+248-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+249            android:exported="false"
+249-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+250            android:multiprocess="true" />
+250-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/qiyu/.gradle/caches/transforms-3/edb2f4f3acfe2e1ac8a5fee5b7c08892/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+251    </application>
+252
+253</manifest>
